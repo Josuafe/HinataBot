@@ -1,5 +1,5 @@
-import misi from '../lib/misi.json'
-
+import { promises, readFileSync } from 'fs'
+let misi = JSON.parse(readFileSync('./lib/misi.json'))
 async function handler(m, { conn, args, text , usedPrefix, command }) {
   //conn.mission = conn.mission || {}
   conn.mission = conn.mission ? conn.mission : {}

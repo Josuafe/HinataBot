@@ -29,9 +29,6 @@ _Jika Respon Tidak Muncul Kemungkinan Terjadi Error_
   after: `${cmenua}`,
 }
 let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirname, args }) => {
-
-     let res = JSON.parse(readFileSync('./json/emoji.json'))
-     let em = res.emoji
      let spas = "                "
      let spas2 = "         "
      let mojis = "╰╴"
@@ -395,25 +392,25 @@ const listMessage = {
     let pusat = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8"]
 let pilih = pusat.getRandom()
 if (pilih == "ke1") {
-	await conn.send2ButtonDoc(m.chat, text.trim(), author, em.getRandom() + ' All Menu', _p + 'allmenu', em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.send2ButtonDoc(m.chat, text.trim(), author, emojis + ' All Menu', _p + 'allmenu', emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke2") {
-	await conn.send2ButtonLoc(m.chat, knimg, text.trim(), author, em.getRandom() + ' All Menu', _p + 'allmenu', em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.send2ButtonLoc(m.chat, knimg, text.trim(), author, emojis + ' All Menu', _p + 'allmenu', emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke3") {
-	await conn.send2ButtonImg(m.chat, knimg, text.trim(), author, em.getRandom() + ' All Menu', _p + 'allmenu', em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.send2ButtonImg(m.chat, knimg, text.trim(), author, emojis + ' All Menu', _p + 'allmenu', emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke4") {
-	await conn.send2ButtonVid(m.chat, knimg, text.trim(), author, em.getRandom() + ' All Menu', _p + 'allmenu', em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.send2ButtonVid(m.chat, knimg, text.trim(), author, emojis + ' All Menu', _p + 'allmenu', emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke5") {
-	await conn.sendTemplateButtonDoc(m.chat, knimg, text.trim(), author, em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.sendTemplateButtonDoc(m.chat, knimg, text.trim(), author, emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke6") {
-	await conn.sendTemplateButtonLoc(m.chat, knimg, text.trim(), author, em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.sendTemplateButtonLoc(m.chat, knimg, text.trim(), author, emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke7") {
-	await conn.send2TemplateButtonFakeImg(m.chat, knimg, text.trim(), author, em.getRandom() + ' All Menu', _p + 'allmenu', em.getRandom() + ' List Menu', _p + 'menulist', fakes, fakefb)
+	await conn.send2TemplateButtonFakeImg(m.chat, knimg, text.trim(), author, emojis + ' All Menu', _p + 'allmenu', emojis + ' List Menu', _p + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke8") {
 	let btn = [{
@@ -423,12 +420,12 @@ if (pilih == "ke8") {
 		}
 	}, {
 		quickReplyButton: {
-			displayText: em.getRandom() + ' All Menu',
+			displayText: emojis + ' All Menu',
 			id: _p + 'allmenu'
 		}
 	}, {
 		quickReplyButton: {
-			displayText: em.getRandom() + ' List Menu',
+			displayText: emojis + ' List Menu',
 			id: _p + 'menulist'
 		}
 	}]

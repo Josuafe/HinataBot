@@ -29,8 +29,7 @@ let handler = async (m, {
 	let _situm = await conn.resize(thumbnailUrl.getRandom(), 300, 150)
 	let sipp = await conn.resize(pp, 150, 150)
 
-	let res = JSON.parse(readFileSync('./json/emoji.json'))
-	let virus = res.emoji.join('')
+	let virus = emojis.join('')
 	const from = m.key.remoteJid
 
 	//==================( Quoted ) =================//

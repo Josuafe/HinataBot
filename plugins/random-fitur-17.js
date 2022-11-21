@@ -81,7 +81,7 @@ await conn.sendMessage(m.chat, {document: { url: tobat }, mimetype: 'application
 
 if (command == 'apiksearch') {
 if (!text) throw `Masukin Text sebagai Judul !!`
-    let res = await fetch(global.API('xcdr', `/api/filmapik/search?query=${text}`, 'apikey'))
+    let res = await fetch(global.API('xcdr', `/api/filmapik/search?query=${text}`, {}, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     let keqing = json.result.map((v, i) => `#${i + 1}. \n*Title:* ${v.title}\n*rating:* ${v.rating}\n*Link Url:* ${v.url}\n*Deskrisi:* ${v.description}\n\n`).join('\n') 
@@ -91,7 +91,7 @@ conn.reply(m.chat, keqing, fakes)
     }
 
 if (command == 'apiktren') {
-    let res = await fetch(global.API('xcdr', '/api/filmapik/trending', 'apikey'))
+    let res = await fetch(global.API('xcdr', '/api/filmapik/trending', {}, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     let keqing = json.result.map((v, i) => `#${i + 1}. \n*Title:* ${v.title}\n*Rsting:* ${v.info}\n*Link:* ${v.url}\n\n`).join('\n') 
@@ -101,7 +101,7 @@ conn.reply(m.chat, keqing, fakes)
     }
 
 if (command == 'lk21ftv') {
-    let res = await fetch(global.API('xcdr', '/api/lk21/ftv', 'apikey'))
+    let res = await fetch(global.API('xcdr', '/api/lk21/ftv', {}, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     let keqing = json.result.map((v, i) => `${i + 1}. \n*Judul:* ${v.title}\n*Link:* ${v.url}\n\n`).join('\n') 
@@ -111,7 +111,7 @@ if (command == 'lk21ftv') {
     
 if (command == 'lk21search') {
     if (!text) throw `Masukin Text sebagai Judul !!`
-    let res = await fetch(global.API('xcdr', `/api/lk21/search?query=${text}`, 'apikey'))
+    let res = await fetch(global.API('xcdr', `/api/lk21/search?query=${text}`, {}, 'apikey'))
     if (!res.ok) throw await res.text()
     let json = await res.json()
     let keqing = json.result.map((v, i) => `#${i + 1}. \n*Title:* ${v.title}\n*Genre:* ${v.genre}\n*rating:* ${v.rating}\n*Link Url:* ${v.url}\n\n`).join('\n') 

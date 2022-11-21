@@ -1,16 +1,14 @@
 import { promises, readFileSync } from 'fs'
 let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isROwner }) => {
-let res = JSON.parse(readFileSync('./json/emoji.json'))
-let em = res.emoji
 	const sections = [
    {
 	title: `${htki} List Options ${htka}`,
 	rows: [
-	{title: `${htjava} ON ${em.getRandom()}`, rowId: `${usedPrefix + command} on`},
-	{title: `${htjava} OFF ${em.getRandom()}`, rowId: `${usedPrefix + command} off`},
-	{title: `${htjava} 24 HOUR ${em.getRandom()}`, rowId: `${usedPrefix + command} 24h`},
-	{title: `${htjava} 7 DAY${em.getRandom()}`, rowId: `${usedPrefix + command} 7d`},
-	{title: `${htjava} 90 DAY${em.getRandom()}`, rowId: `${usedPrefix + command} 90d`}
+	{title: `${htjava} ON ${emojis}`, rowId: `${usedPrefix + command} on`},
+	{title: `${htjava} OFF ${emojis}`, rowId: `${usedPrefix + command} off`},
+	{title: `${htjava} 24 HOUR ${emojis}`, rowId: `${usedPrefix + command} 24h`},
+	{title: `${htjava} 7 DAY ${emojis}`, rowId: `${usedPrefix + command} 7d`},
+	{title: `${htjava} 90 DAY ${emojis}`, rowId: `${usedPrefix + command} 90d`}
 	]
     },
 ]

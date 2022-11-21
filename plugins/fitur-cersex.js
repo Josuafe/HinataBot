@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text, usedPrefix, command }) => {
-        let json = await fetch(global.API('xcdr', '/random/cersex', 'apikey'))
+        let json = await fetch(global.API('xcdr', '/random/cersex', {}, 'apikey'))
         
         let jsons = await json.json()
         let x = jsons.result

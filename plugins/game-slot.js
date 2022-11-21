@@ -20,27 +20,27 @@ artinya kamu bertaruh 100 XP.
         throw `XP kamu tidak cukup!`
     }
 
-    let emojis = ["🏆️", "🥇", "💵"];
-    let a = Math.floor(Math.random() * emojis.length)
-    let b = Math.floor(Math.random() * emojis.length)
-    let c = Math.floor(Math.random() * emojis.length)
+    let bet = ["🏆️", "🥇", "💵"];
+    let a = Math.floor(Math.random() * bet.length)
+    let b = Math.floor(Math.random() * bet.length)
+    let c = Math.floor(Math.random() * bet.length)
     let x = [],
         y = [],
         z = []
     for (let i = 0; i < 3; i++) {
-        x[i] = emojis[a]
+        x[i] = bet[a]
         a++
-        if (a == emojis.length) a = 0
+        if (a == bet.length) a = 0
     }
     for (let i = 0; i < 3; i++) {
-        y[i] = emojis[b]
+        y[i] = bet[b]
         b++
-        if (b == emojis.length) b = 0
+        if (b == bet.length) b = 0
     }
     for (let i = 0; i < 3; i++) {
-        z[i] = emojis[c]
+        z[i] = bet[c]
         c++
-        if (c == emojis.length) c = 0
+        if (c == bet.length) c = 0
     }
     let end
     if (a == b && b == c) {

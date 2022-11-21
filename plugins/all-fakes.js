@@ -9,6 +9,8 @@ export async function before(m, { conn }) {
 	let name = await conn.getName(who)
 	
 	/* Hiasan */
+		let emor = await fetch('https://unpkg.com/emoji.json/emoji-compact.json')
+		let emo = await emor.json()
 		let ini_titik = ['⛶','❏','⫹⫺','◈','➭','☰','ଓ','⟆•','⳻⳻','•','↬','⎔','◈▻','✦','⭑','ᯬ','⭔','◉','⬟','᭻','»','〆','々','⛥','✗','⛊','⚜','⚝','⚚','♪'].getRandom()
 		let ini_garis = ['┅──┅','━━━','═┅┅═','––––','–━═━–','──┅──','═┅┅┅═','┈┅━┅┈','┈┄═┅═┄┈','┅══┅'].getRandom()
 		let ini_panjang = ['┅──┅┅──┅','━━━━━━','═┅┅══┅┅═','––––––––','–━═━––━═━–','──┅────┅──','═┅┅┅══┅┅┅═','┈┅━┅┈┈┅━┅┈','┈┄═┅═┄┈┈┄═┅═┄┈','┅══┅┅══┅'].getRandom()
@@ -62,19 +64,20 @@ export async function before(m, { conn }) {
 		let _kn = [dataa, datab, datac, datad].getRandom()
 		
 		/* Hiasan */
+		global.emojis = emo.getRandom()
 		global.dmenut = ini_atas
 		global.dmenub = ini_kiri
-		global.dmenub2 = dmenub
+		global.dmenub2 = ini_kiri
 		global.dmenuf = ini_bawah
-		global.cmenut = dmenut
+		global.cmenut = ini_atas
 		global.cmenuh = ini_kanan
-		global.cmenub = dmenub
-		global.cmenuf = dmenuf
+		global.cmenub = ini_kiri
+		global.cmenuf = ini_bawah
 		global.pmenus = ini_titik
 		global.dashmenu = ini_titik + ' *D A S B O A R D* ' + ini_titik
-		global.htki = dmenut
-		global.htka = cmenuh
-		global.htjava = pmenus
+		global.htki = ini_atas
+		global.htka = ini_kanan
+		global.htjava = ini_titik
 		
 		/* Thumbnail */
 		global.hwaifu = link_waifu

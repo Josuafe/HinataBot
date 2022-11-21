@@ -1,12 +1,9 @@
 import { readFileSync } from "fs"
 
 let handler = async (m, { conn, text }) => {
-let res = JSON.parse(readFileSync('./json/emoji.json'))
-let em = res.emoji
-
     conn.sendMessage(m.chat, {
           react: {
-            text: em.getRandom(),
+            text: emojis,
             key: m.key,
           }})
   

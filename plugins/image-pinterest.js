@@ -4,8 +4,6 @@ import { pinterest } from '@bochilteam/scraper'
 import { readFileSync } from 'fs'
 
 let handler = async(m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
-  let res = JSON.parse(readFileSync('./json/emoji.json'))
-  let em = res.emoji
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
@@ -19,16 +17,16 @@ const sections = [
     {
 	title: htjava + ' List Pinterest Search ' + htjava,
 	rows: [
-{title: em.getRandom() + " Pinterest 1", rowId: usedPrefix + command + ' pinterest1 |' + text},
-{title: em.getRandom() + " Pinterest 2", rowId: usedPrefix + command + ' pinterest2 |' + text},
-{title: em.getRandom() + " Pinterest 3", rowId: usedPrefix + command + ' pinterest3 |' + text},
-{title: em.getRandom() + " Pinterest 4", rowId: usedPrefix + command + ' pinterest4 |' + text},
-{title: em.getRandom() + " Pinterest 5", rowId: usedPrefix + command + ' pinterest5 |' + text},
-{title: em.getRandom() + " Pinterest 6", rowId: usedPrefix + command + ' pinterest6 |' + text},
-{title: em.getRandom() + " Pinterest 7", rowId: usedPrefix + command + ' pinterest7 |' + text},
-{title: em.getRandom() + " Pinterest 8", rowId: usedPrefix + command + ' pinterest8 |' + text},
-{title: em.getRandom() + " Pinterest 9", rowId: usedPrefix + command + ' pinterest9 |' + text},
-{title: em.getRandom() + " Pinterest 10", rowId: usedPrefix + command + ' pinterest10 |' + text}
+{title: emojis + " Pinterest 1", rowId: usedPrefix + command + ' pinterest1 |' + text},
+{title: emojis + " Pinterest 2", rowId: usedPrefix + command + ' pinterest2 |' + text},
+{title: emojis + " Pinterest 3", rowId: usedPrefix + command + ' pinterest3 |' + text},
+{title: emojis + " Pinterest 4", rowId: usedPrefix + command + ' pinterest4 |' + text},
+{title: emojis + " Pinterest 5", rowId: usedPrefix + command + ' pinterest5 |' + text},
+{title: emojis + " Pinterest 6", rowId: usedPrefix + command + ' pinterest6 |' + text},
+{title: emojis + " Pinterest 7", rowId: usedPrefix + command + ' pinterest7 |' + text},
+{title: emojis + " Pinterest 8", rowId: usedPrefix + command + ' pinterest8 |' + text},
+{title: emojis + " Pinterest 9", rowId: usedPrefix + command + ' pinterest9 |' + text},
+{title: emojis + " Pinterest 10", rowId: usedPrefix + command + ' pinterest10 |' + text}
 	]
     }
 ]

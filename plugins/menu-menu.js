@@ -5,8 +5,6 @@ import { xpRange } from '../lib/levelling.js'
 
 let handler = async(m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
 let imgr = flaaa.getRandom()
-let res = JSON.parse(readFileSync('./json/emoji.json'))
-let em = res.emoji
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
     let { exp, limit, level, role, money, lastclaim, lastweekly, registered, regTime, age, banned, pasangan } = global.db.data.users[who]
@@ -49,25 +47,25 @@ let weem = `📮 *Note:* Jika menemukan bug, error atau kesulitan dalam pengguna
     let pusat = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8", "ke9"]
 let pilih = pusat.getRandom()
 if (pilih == "ke1") {
-	await conn.send2ButtonDoc(m.chat, cap, weem, em.getRandom() + ' All Menu', usedPrefix + 'allmenu', em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.send2ButtonDoc(m.chat, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke2") {
-	await conn.send2ButtonLoc(m.chat, knimg, cap, weem, em.getRandom() + ' All Menu', usedPrefix + 'allmenu', em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.send2ButtonLoc(m.chat, knimg, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke3") {
-	await conn.send2ButtonImg(m.chat, knimg, cap, weem, em.getRandom() + ' All Menu', usedPrefix + 'allmenu', em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.send2ButtonImg(m.chat, knimg, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke4") {
-	await conn.send2ButtonVid(m.chat, knimg, cap, weem, em.getRandom() + ' All Menu', usedPrefix + 'allmenu', em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.send2ButtonVid(m.chat, knimg, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke5") {
-	await conn.sendTemplateButtonDoc(m.chat, knimg, cap, weem, em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.sendTemplateButtonDoc(m.chat, knimg, cap, weem, emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke6") {
-	await conn.sendTemplateButtonLoc(m.chat, knimg, cap, weem, em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.sendTemplateButtonLoc(m.chat, knimg, cap, weem, emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke7") {
-	await conn.send2TemplateButtonFakeImg(m.chat, knimg, cap, weem, em.getRandom() + ' All Menu', usedPrefix + 'allmenu', em.getRandom() + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
+	await conn.send2TemplateButtonFakeImg(m.chat, knimg, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
 }
 if (pilih == "ke8") {
 	let btn = [{
@@ -77,12 +75,12 @@ if (pilih == "ke8") {
 		}
 	}, {
 		quickReplyButton: {
-			displayText: em.getRandom() + ' All Menu',
+			displayText: emojis + ' All Menu',
 			id: usedPrefix + 'allmenu'
 		}
 	}, {
 		quickReplyButton: {
-			displayText: em.getRandom() + ' List Menu',
+			displayText: emojis + ' List Menu',
 			id: usedPrefix + 'menulist'
 		}
 	}]
@@ -91,7 +89,7 @@ if (pilih == "ke8") {
 	}, btn, knimg)
 }
 if (pilih == "ke9") {
-	await conn.sendButton(m.chat, cap, weem, Buffer.alloc(0), [[em.getRandom() + ' All Menu', usedPrefix + 'allmenu'], [em.getRandom() + ' List Menu', usedPrefix + 'menulist']], m, { mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await( await fetch(thumbnailUrl.getRandom())).buffer(), contextInfo: {
+	await conn.sendButton(m.chat, cap, weem, Buffer.alloc(0), [[emojis + ' All Menu', usedPrefix + 'allmenu'], [emojis + ' List Menu', usedPrefix + 'menulist']], m, { mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await( await fetch(thumbnailUrl.getRandom())).buffer(), contextInfo: {
           externalAdReply :{
           showAdAttribution: true,
     mediaUrl: lin_.getRandom(),

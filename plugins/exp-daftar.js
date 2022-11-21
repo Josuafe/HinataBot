@@ -49,8 +49,8 @@ let handler = async function (m, { text, usedPrefix, command }) {
 ]
 
 const listMessage = {
-  text: `│›Please select your age at the bottom button...`,
-  footer: `┗ *ʏᴏᴜʀ ɴᴀᴍᴇ:* ${conn.getName(m.sender)}\n<❔> Want a costume name? type *${usedPrefix + command} yourname.age*`,
+  text: 'Please select your age at the bottom button...',
+  footer: `*ʏᴏᴜʀ ɴᴀᴍᴇ:* ${conn.getName(m.sender)}\n<❔> Mau kustom nama? ketik *${usedPrefix + command} nama.umur*\nEx. ${usedPrefix + command} ${conn.getName(m.sender)}|18`,
   title: htki + ' ʀᴇɢɪsᴛᴇʀ ' + htka,
   buttonText: "Click Here !",
   sections
@@ -71,45 +71,16 @@ const listMessage = {
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
-  let mim_ = ["application/vnd.openxmlformats-officedocument.presentationml.presentation","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/zip","application/pdf"]
-let ngelink_ = ["https://www.youtube.com","https://www.instagram.com","http://facebook.com"]
-
   let cap = `
-${cmenut} *ᴜsᴇʀs*
-${cmenub} *sᴛᴀᴛᴜs:* ☑️ sᴜᴄᴄᴇssғᴜʟ
-${cmenub} *ɴᴀᴍᴇ:* ${name}
-${cmenub} *ᴀɢᴇ:* ${age} ʏᴇᴀʀs
-${cmenub} *sɴ:* ${sn}
-${cmenuf}
+*ᴜsᴇʀs*
+*sᴛᴀᴛᴜs:* ☑️ sᴜᴄᴄᴇssғᴜʟ
+*ɴᴀᴍᴇ:* ${name}
+*ᴀɢᴇ:* ${age} ʏᴇᴀʀs
+*sɴ:* ${sn}
 
 ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.)
-${cmenua}
 `
-  let buttonMessage= {
-'document':{'url':gcwangsaf},
-'mimetype':mim_.getRandom(),
-'fileName':htjava + ' ʀᴇɢɪsᴛᴇʀ ' + htjava,
-'fileLength':fsizedoc,
-'pageCount':fpagedoc,
-'contextInfo':{
-'forwardingScore':555,
-'isForwarded':true,
-'externalAdReply':{
-'mediaUrl':ngelink_.getRandom(),
-'mediaType':2,
-'previewType':'pdf',
-'title':author,
-'body':bottime,
-'thumbnail':await(await fetch(thumbnailUrl.getRandom())).buffer(),
-'sourceUrl':gcwangsaf}},
-'caption':cap,
-'footer':wm,
-'buttons':[
-{'buttonId':'.menu','buttonText':{'displayText':'ᴍᴇɴᴜ'},'type':1},
-{'buttonId':'.donasi','buttonText':{'displayText':'ᴅᴏɴᴀsɪ'},'type':1}
-],
-'headerType':6}
-    await conn.sendMessage(m.chat,buttonMessage, { quoted:m})
+    conn.send2ButtonDoc(m.chat, cap, author, 'ᴍᴇɴᴜ', '.menu', 'ᴅᴏɴᴀsɪ', '.donasi', fakes, adReply)
 }
 handler.help = ['daftar', 'register'].map(v => v + ' <nama>.<umur>')
 handler.tags = ['xp']

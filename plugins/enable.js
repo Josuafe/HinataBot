@@ -1,7 +1,5 @@
-import { promises, readFileSync } from 'fs'
+
 let handler = async (m, { conn, usedPrefix, command, args, text, isOwner, isAdmin, isROwner }) => {
-let res = JSON.parse(readFileSync('./json/emoji.json'))
-let em = res.emoji
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)

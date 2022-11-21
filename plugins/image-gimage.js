@@ -87,7 +87,7 @@ await conn.sendButton(m.chat, caption, wm, x.getRandom(), [
     }
 
 if (command == 'image3') {
-let url = global.API('xcdr', `/api/search/image?query=${text}`, 'apikey')
+let url = global.API('xcdr', `/api/search/image?query=${text}`, {}, 'apikey')
 let js = await fetch(url)
 let jsons = await js.json()
 let caption = `*⎔┉━「 ${jsons.result[0].title} 」━┉⎔*\n`
@@ -114,7 +114,7 @@ let caption = `*⎔┉━「 ${jsons.result[0].title} 」━┉⎔*\n`
 
 if (command == 'image4') {
 let caption = `*Hasil pencarian* ${text}\n*Note:* xcoders`
-let url = global.API('xcdr', `/api/search/image2?query=${text}`, 'apikey')
+let url = global.API('xcdr', `/api/search/image2?query=${text}`, {}, 'apikey')
 let js = await fetch(url)
 let jp = await js.json()
 await conn.sendButton(m.chat, caption, wm, jp.result[0].url, [
