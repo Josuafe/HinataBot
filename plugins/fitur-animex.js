@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 
 let handler = async(m, { conn, text, usedPrefix, command }) => {
   if (!text) return m.reply(`Example : ${usedPrefix + command} neon helo \n*List Efek:*\nhusbu\nlatestnekopoi\nloli\nneko\nrandomnhentai\nwaifu`)
-        let images = `https://api-xcoders.xyz/api/anime/${text}?apikey=${global.xckey}`
+        let images = global.API('xcdr', '/api/anime', { text }, 'apikey')
         let caption = `*⎔┉━「 Animex 」━┉⎔*\n🤠 *Query* : ${text}`
         let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
         let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())

@@ -58,7 +58,7 @@ tobecontinue
 missionpassed`)
   let img = await q.download?.()
   let url = await uploadImage(img)
-    let images = `https://api-xcoders.xyz/api/maker/animeface?url=${url}&apikey=${global.xckey}`
+    let images = global.API('xcdr', `/api/maker/animeface?url=${url}`, 'apikey')
     let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${url}`
   await conn.sendButton(m.chat, caption, wm, images, [
@@ -81,7 +81,7 @@ captcha`)
     let url = await uploadImage(img)
   let thm = args[0]
   let text1 = args.slice(1).join(' ')
-    let images = `https://api-xcoders.xyz/api/maker/${thm}?text=${text1}&url=${url}&apikey=${global.xckey}`
+    let images = global.API('xcdr', `/api/maker/${thm}?text=${text1}&url=${url}`, 'apikey')
     let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${thm}`
   await conn.sendButton(m.chat, caption, wm, images, [
@@ -110,7 +110,7 @@ ssmap`)
 
   let thm = args[0]
   let text1 = args.slice(1).join(' ')
-    let images = `https://api-xcoders.xyz/api/maker/${thm}?text=${text1}&apikey=${global.xckey}`
+    let images = global.API('xcdr', `/api/maker/${thm}?text=${text1}`, 'apikey')
     let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${thm}`
   await conn.sendButton(m.chat, caption, wm, images, [

@@ -23,7 +23,7 @@ smoke`)
   let thm = args[0]
   let text1 = args.slice(1).join(' ')
   
-        let images = `https://api-xcoders.xyz/api/photooxy/${thm}?text=${text1}&apikey=${global.xckey}`
+        let images = global.API('xcdr', `/api/photooxy/${thm}?text=${text1}`, 'apikey')
         let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${thm}`
   await conn.sendButton(m.chat, caption, wm, images, [

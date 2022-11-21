@@ -14,7 +14,7 @@ let handler = async(m, { conn, text, args, usedPrefix, command }) => {
   let text1 = urut[1]
   let text2 = urut[2]
   
-        let images = `https://api-xcoders.xyz/api/textpro/${thm}?text=${text1}&text2=${text2}&apikey=${global.xckey}`
+        let images = global.API('xcdr', `/api/textpro/${thm}?text=${text1}&text2=${text2}`, 'apikey')
         let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${thm}`
   await conn.sendButton(m.chat, caption, wm, images, [

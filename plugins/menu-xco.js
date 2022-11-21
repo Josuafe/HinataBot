@@ -221,7 +221,7 @@ try {
 if (command) {
 switch (template) {
 case 'codenhentai':
-            let json = await fetch('https://api-xcoders.xyz/api/anime/codenhentai?code=' + one + '&apikey=7iyNa0qA')
+            let json = await fetch('https://api-xcoders.site/api/anime/codenhentai?code=' + one + '&apikey=7iyNa0qA')
             let aa = await json.json()
             let axa = aa.result.pages
         let aa_ = Object.keys(axa).map((v, index) => ({
@@ -253,7 +253,7 @@ case 'codenhentai':
             case 'loli':
             case 'neko':
             case 'waifu':
-        let bb = 'https://api-xcoders.xyz/api/anime/' + args[0] + '?apikey=7iyNa0qA'
+        let bb = 'https://api-xcoders.site/api/anime/' + args[0] + '?apikey=7iyNa0qA'
         let bbi = `*title:* ${args[0]}`
 conn.sendButton(m.chat, bbi, author, bb, [['Menu', '/menu']], m, adReply)
             break
@@ -278,7 +278,7 @@ conn.sendButton(m.chat, bbi, author, bb, [['Menu', '/menu']], m, adReply)
         } catch (e) {
         throw eror
         }
-        let cc = 'https://api-xcoders.xyz/api/convert/' + args[0] + '?url=' + d__d + '&apikey=7iyNa0qA'
+        let cc = 'https://api-xcoders.site/api/convert/' + args[0] + '?url=' + d__d + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, cc, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -321,7 +321,7 @@ case 'typography':
 case 'typography2':
 case 'warface':
 case 'water':
-        let dd = 'https://api-xcoders.xyz/api/ephoto/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
+        let dd = 'https://api-xcoders.site/api/ephoto/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, dd, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -385,7 +385,7 @@ let a__c = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let ee = 'https://api-xcoders.xyz/api/maker/' + args[0] + '?url=' + d__c + '&apikey=7iyNa0qA'
+        let ee = 'https://api-xcoders.site/api/maker/' + args[0] + '?url=' + d__c + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, ee, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -406,7 +406,7 @@ case 'pendant':
 case 'snow':
 case 'streetsign':
 case 'waterwriting':
-        let ff = 'https://api-xcoders.xyz/api/photofunia/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
+        let ff = 'https://api-xcoders.site/api/photofunia/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, ff, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -434,7 +434,7 @@ let a__b = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let gg = 'https://api-xcoders.xyz/api/photofunia/' + args[0] + '?url=' + d__b + '&apikey=7iyNa0qA'
+        let gg = 'https://api-xcoders.site/api/photofunia/' + args[0] + '?url=' + d__b + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, gg, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -467,7 +467,7 @@ let a__a = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let hh = 'https://api-xcoders.xyz/api/photooxy/' + args[0] + '?url=' + d__a + '&apikey=7iyNa0qA'
+        let hh = 'https://api-xcoders.site/api/photooxy/' + args[0] + '?url=' + d__a + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, hh, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -488,7 +488,7 @@ case 'oceansea':
 case 'romantic':
 case 'shadow':
 case 'smoke':
-        let ii = 'https://api-xcoders.xyz/api/photooxy/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
+        let ii = 'https://api-xcoders.site/api/photooxy/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, ii, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -531,7 +531,7 @@ case 'stone':
 case 'summer':
 case 'transformer':
 case 'videogame':
-        let jj = 'https://api-xcoders.xyz/api/textpro/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
+        let jj = 'https://api-xcoders.site/api/textpro/' + args[0] + '?text=' + one + '&apikey=7iyNa0qA'
         conn.sendButtonImg(m.chat, jj, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
 }

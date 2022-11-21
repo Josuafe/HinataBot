@@ -15,7 +15,7 @@ try {
 if (args[0] == 'a') {
 let caption = `*⎔┉━「 Random darkjoke 」━┉⎔*
 🤠 *Query* : ${command}`
-        let images = `https://api-xcoders.xyz/api/random/darkjoke?apikey=${global.xckey}`
+        let images = global.API('xcdr', '/api/random/darkjoke', 'apikey')
         await conn.sendButton(m.chat, caption, wm, images, [['Darkjoke','.darkjoke']] , m, {
             fileLength: fsizedoc,
             seconds: fsizedoc,

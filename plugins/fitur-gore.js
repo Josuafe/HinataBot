@@ -1,6 +1,6 @@
 import fetch from 'node-fetch'
 let handler = async(m, { conn, text, usedPrefix, command }) => {
-        let json = await fetch(`https://api-xcoders.xyz/api/random/gore?apikey=${global.xckey}`)
+        let json = await fetch(global.API('xcdr', '/api/random/gore', 'apikey'))
         let jsons = await json.json()
         let x = jsons.result
         let caption = `*⎔┉━「 gore 」━┉⎔*
