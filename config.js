@@ -40,6 +40,7 @@ global.APIs = {
  nzcha : 'http://nzcha-apii.herokuapp.com',
  pencarikode : 'https://pencarikode.xyz',
  violetics : 'https://violetics.pw',
+ xcdr : 'https://api-xcoders.site',
  xteam : 'https://api.xteam.xyz',
  zahir : 'https://zahirr-web.herokuapp.com',
  zekais : 'http://zekais-api.herokuapp.com',
@@ -60,6 +61,7 @@ global.APIKeys = {
  'https://pencarikode.xyz' : 'pais',
  'https://rest-beni.herokuapp.com' : 'benniismaelapikey',
  'https://violetics.pw' : 'beta',
+ 'https://api-xcoders.site' : '7iyNa0qA',
  'https://zahirr-web.herokuapp.com' : 'zahirgans',
  'https://zekais-api.herokuapp.com' : 'zekais',
  'https://zenzapis.xyz' : 'f9fccfcff1'
