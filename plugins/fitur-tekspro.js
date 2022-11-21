@@ -9,13 +9,14 @@ let split = '|'
 let handler = async (m, { conn, args: [effect], text: txt, usedPrefix, command }) => {
 var lurl = await fetch('https://raw.githubusercontent.com/wudysoft/Textpro-Theme/main/textprome.json') 
 var effects = await lurl.json()
-  if (!effect) throw 'Ketik .textpro <nama efek>\n*Contoh:*\n.textpro space Ayang\n\n╭─❑ 「 LIST EFFECT 」 ❑──\n' + effects.map(v => v.title).join('\n│ • ')
+let nombor = 0
+  if (!effect) throw 'Ketik .tekspro <nama efek>\n*Contoh:*\n.tekspro space Ayang\n\n「 LIST EFFECT 」\n' + effects.map(v => v.title).join('\n' + ++nombor + '. ')
   effect = effect.toLowerCase()
   if (!effects.find(v => (new RegExp(v.title, 'gi')).test(effect))) throw `Efek *${effect}* tidak ditemukan`
   let text = txt.replace(new RegExp(effect, 'gi'), '').trimStart()
   if (text.includes(split)) text = text.split(split)
   text = Array.isArray(text) ? text : [text]
-  let res = await textpro(effect, ...text)
+  let res = await tekspro(effect, ...text)
   if (typeof res == 'number') throw res == -1 ? `Efek *${effect}* tidak ditemukan` : `Gunakan format ${usedPrefix}${command} ${effect} ${new Array(res).fill('text').map((v, i) => v + (i ? i + 1 : '')).join('|')}`
   let result = await axios.get(res, {
     responseType: 'arraybuffer'
@@ -25,16 +26,7 @@ var effects = await lurl.json()
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
  let tag = `@${m.sender.replace(/@.+/, '')}`
- conn.send2ButtonImg(m.chat, result.data, `Effect *${effect}nya* Dah Jadi ${tag}`,`Subs My Channel ${global.snh}`, 'Menu', '.menu', 'Owner', '.owner', fakes, { contextInfo: { externalAdReply: { showAdAttribution: true,
-    mediaUrl: sgc,
-    mediaType: 2, 
-    description: sgc,
-    title: "Iɴɪ Dʜ Sɪᴀᴘ Cᴜʏ 〠",
-    body: wm,
-    thumbnail: fs.readFileSync('./thumbnail.jpg'),
-    sourceUrl: 'https://wa.me/' + nomorown
-     }}
-  })
+ conn.send2ButtonImg(m.chat, result.data, `Effect *${effect}nya* Dah Jadi ${tag}`, author, 'Menu', '.menu', 'Owner', '.owner', fakes, adReply)
 }
 handler.help = ['tekspro'].map(v => v + ' <effect> <text>')
 handler.tags = ['maker']
@@ -46,7 +38,7 @@ function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
 
-async function textpro(effect, ...texts) {
+async function tekspro(effect, ...texts) {
 var lurl = await fetch('https://raw.githubusercontent.com/wudysoft/Textpro-Theme/main/textprome.json') 
 var effects = await lurl.json()
   texts = texts.filter(v => v)
