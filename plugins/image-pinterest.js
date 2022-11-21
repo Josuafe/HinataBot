@@ -17,16 +17,16 @@ const sections = [
     {
 	title: htjava + ' List Pinterest Search ' + htjava,
 	rows: [
-{title: emojis + " Pinterest 1", rowId: usedPrefix + command + ' pinterest1 |' + text},
-{title: emojis + " Pinterest 2", rowId: usedPrefix + command + ' pinterest2 |' + text},
-{title: emojis + " Pinterest 3", rowId: usedPrefix + command + ' pinterest3 |' + text},
-{title: emojis + " Pinterest 4", rowId: usedPrefix + command + ' pinterest4 |' + text},
-{title: emojis + " Pinterest 5", rowId: usedPrefix + command + ' pinterest5 |' + text},
-{title: emojis + " Pinterest 6", rowId: usedPrefix + command + ' pinterest6 |' + text},
-{title: emojis + " Pinterest 7", rowId: usedPrefix + command + ' pinterest7 |' + text},
-{title: emojis + " Pinterest 8", rowId: usedPrefix + command + ' pinterest8 |' + text},
-{title: emojis + " Pinterest 9", rowId: usedPrefix + command + ' pinterest9 |' + text},
-{title: emojis + " Pinterest 10", rowId: usedPrefix + command + ' pinterest10 |' + text}
+{title: emojis + " Powered By api.lolhuman.xyz", rowId: usedPrefix + command + ' pinterest1 |' + text},
+{title: emojis + " Powered By leyscoders", rowId: usedPrefix + command + ' pinterest2 |' + text},
+{title: emojis + " Powered By rest-beni", rowId: usedPrefix + command + ' pinterest3 |' + text},
+{title: emojis + " Powered By erdwpe", rowId: usedPrefix + command + ' pinterest4 |' + text},
+{title: emojis + " Powered By melcanz.com", rowId: usedPrefix + command + ' pinterest5 |' + text},
+{title: emojis + " Powered By bochilteam", rowId: usedPrefix + command + ' pinterest6 |' + text},
+{title: emojis + " Powered By api.lolhuman.xyz", rowId: usedPrefix + command + ' pinterest7 |' + text},
+{title: emojis + " Powered By tyz-api", rowId: usedPrefix + command + ' pinterest8 |' + text},
+{title: emojis + " Powered By api.vhtear.com", rowId: usedPrefix + command + ' pinterest9 |' + text},
+{title: emojis + " Powered By violetics.pw", rowId: usedPrefix + command + ' pinterest10 |' + text}
 	]
     }
 ]
