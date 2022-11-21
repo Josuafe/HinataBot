@@ -114,7 +114,7 @@
         "url" : "*",
         "url-regex-safe" : "*",
         "wa-sticker-formatter" : "*",
-        "xfarr-api":"github:xfar05/xfarr-api",
+        "xfarr-api": "^1.0.3",
         "yargs" : "*",
         "zs-extract" : "*"
     },
