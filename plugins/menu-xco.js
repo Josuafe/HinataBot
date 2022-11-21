@@ -221,7 +221,7 @@ try {
 if (command) {
 switch (template) {
 case 'codenhentai':
-            let json = await fetch(global.API('xcdr', '/api/anime/codenhentai?code=' + one + '&', {}, 'apikey'))
+            let json = await fetch(global.API('xcdr', '/api/anime/codenhentai', { code: one }, 'apikey'))
             let aa = await json.json()
             let axa = aa.result.pages
         let aa_ = Object.keys(axa).map((v, index) => ({
@@ -253,7 +253,7 @@ case 'codenhentai':
             case 'loli':
             case 'neko':
             case 'waifu':
-        let bb = global.API('xcdr', '/api/anime/' + args[0] + '?', {}, 'apikey')
+        let bb = global.API('xcdr', '/api/anime', { args[0] }, 'apikey')
         let bbi = `*title:* ${args[0]}`
 conn.sendButton(m.chat, bbi, author, bb, [['Menu', '/menu']], m, adReply)
             break
@@ -278,7 +278,7 @@ conn.sendButton(m.chat, bbi, author, bb, [['Menu', '/menu']], m, adReply)
         } catch (e) {
         throw eror
         }
-        let cc = global.API('xcdr', '/api/convert/' + args[0] + '?url=' + d__d + '&', {}, 'apikey')
+        let cc = global.API('xcdr', '/api/convert/' + args[0], { url: d__d }, 'apikey')
         conn.sendButtonImg(m.chat, cc, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -321,7 +321,7 @@ case 'typography':
 case 'typography2':
 case 'warface':
 case 'water':
-        let dd = global.API('xcdr', '/api/ephoto/' + args[0] + '?text=' + one + '&', {}, 'apikey')
+        let dd = global.API('xcdr', '/api/ephoto/' + args[0], { text: one }, 'apikey')
         conn.sendButtonImg(m.chat, dd, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -385,7 +385,7 @@ let a__c = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let ee = global.API('xcdr', '/api/maker/' + args[0] + '?url=' + d__c + '&', {}, 'apikey')
+        let ee = global.API('xcdr', '/api/maker/' + args[0], { url: d__c }, 'apikey')
         conn.sendButtonImg(m.chat, ee, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -406,7 +406,7 @@ case 'pendant':
 case 'snow':
 case 'streetsign':
 case 'waterwriting':
-        let ff = global.API('xcdr', '/api/photofunia/' + args[0] + '?text=' + one + '&', {}, 'apikey')
+        let ff = global.API('xcdr', '/api/photofunia/' + args[0], { text: one }, 'apikey')
         conn.sendButtonImg(m.chat, ff, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -434,7 +434,7 @@ let a__b = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let gg = global.API('xcdr', '/api/photofunia/' + args[0] + '?url=' + d__b + '&', {}, 'apikey')
+        let gg = global.API('xcdr', '/api/photofunia/' + args[0], { url: d__b }, 'apikey')
         conn.sendButtonImg(m.chat, gg, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -467,7 +467,7 @@ let a__a = m.quoted ? m.quoted : m
         } catch (e) {
         throw eror
         }
-        let hh = global.API('xcdr', '/api/photooxy/' + args[0] + '?url=' + d__a + '&', {}, 'apikey')
+        let hh = global.API('xcdr', '/api/photooxy/' + args[0], { url: d__a }, 'apikey')
         conn.sendButtonImg(m.chat, hh, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -488,7 +488,7 @@ case 'oceansea':
 case 'romantic':
 case 'shadow':
 case 'smoke':
-        let ii = global.API('xcdr', '/api/photooxy/' + args[0] + '?text=' + one + '&', {}, 'apikey')
+        let ii = global.API('xcdr', '/api/photooxy/' + args[0], { text: one }, 'apikey')
         conn.sendButtonImg(m.chat, ii, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
             
@@ -531,7 +531,7 @@ case 'stone':
 case 'summer':
 case 'transformer':
 case 'videogame':
-        let jj = global.API('xcdr', '/api/textpro/' + args[0] + '?text=' + one + '&', {}, 'apikey')
+        let jj = global.API('xcdr', '/api/textpro/' + args[0], { text: one }, 'apikey')
         conn.sendButtonImg(m.chat, jj, author, 'Nih.jpg', 'To Sticker', '.s', fakes, adReply)
             break
 }
