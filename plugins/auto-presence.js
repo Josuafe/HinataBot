@@ -6,13 +6,15 @@ handler.all = async function (m) {
     /* Mengetik */
     let ran = ['unavailable', 'available', 'composing', 'recording', 'paused']
 	return this.sendPresenceUpdate(ran.getRandom(), m.chat)
-	/* MeReact */
+    }
+    if (m.text.startsWith('.') || m.text.startsWith('#') || m.text.startsWith('!')) {
+    /* MeReact */
 	return this.sendMessage(m.chat, {
           react: {
             text: '⌛',
-            key: m.sender.key,
+            key: m.key,
           }})
-    }
+          }
   }
 }
 export default handler

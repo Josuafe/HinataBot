@@ -106,7 +106,7 @@ let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
     let som = 100
     let sim = som.getRandom()
-    let caption = `Tingkat ke *${args[0]}an* \nAtas nama ${name} @${who.split("@")[0]} \nAdalah Sebesar *${Number(sim * 100).toFixed(2)}%*`
+    let caption = `Tingkat ke *${args[0]}an* \nAtas nama ${name ? args[1] : '*Semua Member*'} ${'@' + who.split("@")[0] ? args[1] : '*Semua Member*'} \nAdalah Sebesar *${Number(sim).toFixed(2)}%*`
   await conn.send2ButtonDoc(m.chat, caption, author, '🔖 Ok', 'Huuu', 'ℹ️ Menu', '.menu', fakes, adReply)
 break
             }

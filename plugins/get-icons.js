@@ -4,11 +4,11 @@ import { sticker } from '../lib/sticker.js'
 let handler = async(m, { conn, usedPrefix, text, args, command }) => {
 
 if (command == 'gettenor') {
-if (!text) throw `Contoh penggunaan ${usedPrefix}${command} pentol|2`
 let urut = text.split`|`
   let text1 = urut[0]
   let text2 = urut[1]
-  
+  if (!text1||!text2) throw `Contoh penggunaan ${usedPrefix}${command} pentol|2`
+
     let gas = await fetch(`https://g.tenor.com/v1/search?q=${text1}&key=LIVDSRZULELA&limit=${text2}`)
     let json = await gas.json()
     let ter = json.results

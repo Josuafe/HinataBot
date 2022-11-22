@@ -7,17 +7,7 @@ let name = await conn.getName(who)
     if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
     const res = await (/2/.test(command) ? wallpaperv2 : wallpaper)(text)
     const img = res[Math.floor(Math.random() * res.length)]
-    conn.sendButton(m.chat, `Result from *${text}*`, wm, await(await fetch(img)).buffer(), [['🎀 Menu', '/menu']], m, { fileLength: fsizedoc, seconds: fsizedoc, contextInfo: {
-          externalAdReply :{
-    mediaUrl: sig,
-    mediaType: 2,
-    description: wm, 
-    title: '👋 Hai, ' + name + ' ' + ucapan,
-    body: botdate,
-    thumbnail: await(await fetch(pp)).buffer(),
-    sourceUrl: img
-     }}
-  })
+    conn.sendButton(m.chat, `Result from *${text}*`, wm, await(await fetch(img)).buffer(), [['🎀 Menu', '/menu']], fakes, adReply)
 }
 handler.help = ['', '2'].map(v => 'wallpaper' + v + ' <query>')
 handler.tags = ['downloader']
