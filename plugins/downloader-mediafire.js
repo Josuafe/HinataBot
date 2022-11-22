@@ -17,13 +17,14 @@ try {
     } catch {
     let res = await fetch(`https://api.lolhuman.xyz/api/mediafire?apikey=${global.lolkey}&url=${args[0]}`)
     let x = await res.json()
+    if (!x.result.filename) throw 'Error Gan'
     let caption = `*${htki} mediafire ${htka}*
-*💌 title:* ${x.result.filename}
-*🗂️ filetype:* ${x.result.filetype}
-*📊 filesize:* ${x.result.filesize}
-*📨 uploaded:* ${x.result.uploaded}
+*💌 Name:* ${x.result.filename}
+*🗂️ Extension:* ${x.result.filetype}
+*📊 Size:* ${x.result.filesize}
+*📨 Uploaded:* ${x.result.uploaded}
     `
-    conn.sendButtonImg(m.chat, logo, caption, author, 'G E T', '.get ' + x.result.link, fakes, adReply)
+    if (x.result.filename) return conn.sendButtonImg(m.chat, logo, caption, author, 'G E T', '.get ' + x.result.link, fakes, adReply)
     }
 }
 handler.help = ['mediafire']

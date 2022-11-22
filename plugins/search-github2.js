@@ -26,10 +26,9 @@ $ git clone ${repo.clone_url}
     }).join('\n— — — — — — — — — — — — — —\n')
     conn.sendHydrated(m.chat, `*${htki} ɢɪᴛʜᴜʙ sᴇᴀʀᴄʜ ${htka}*\n` + str, botdate, null, json.items.map((repo, index) => { return `${repo.html_url}` }), ['[ 1 ] ʟ ɪ ɴ ᴋ', '[ 2 ] ʟ ɪ ɴ ᴋ', '[ 3 ] ʟ ɪ ɴ ᴋ'], null,null, [[null,null],[null,null],[null,null]],m)
 }
-handler.help = ['ghs'].map(v => v + ' <pencarian>')
+handler.help = ['gh'].map(v => v + ' <pencarian>')
 handler.tags = ['internet','downloader']
-
-handler.command = /^(ghs|githubs)?$/i
+handler.command = /^g(ithub|h)search$/i
 
 export default handler
 

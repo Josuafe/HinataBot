@@ -1,13 +1,13 @@
 
 let handler = async ( m, { conn, text, args, command}) => {
-  conn.duel = conn.duel ? conn.duel : []
+  conn.duel = conn.duel ? conn.duel : {}
   args.length != 0 ? conn.duel.push(m.mentionedJid ? m.mentionedJid[0] : (args[0].replace(/[@ .+-]/g, '').replace(' ', '') + '@s.whatsapp.net')) : ""
   let who = conn.duel[0]
   //let kita = conn.duel[m.sender]
   let enemy = global.db.data.users[who]
   let user = global.db.data.users[m.sender]
   let count = args[1] && args[1].length > 0 ? Math.min(100, Math.max(parseInt(args[1]), 1)) : Math.min(1)
-  let nama = conn.getName(m.sender)
+  let nama = await conn.getName(m.sender)
 
   let randomaku = `${Math.floor(Math.random() * 101)}`.trim()
   let randomkamu = `${Math.floor(Math.random() * 81)}`.trim()
