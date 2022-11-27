@@ -52,11 +52,9 @@ ${usedPrefix + command} pinterest |wibu
 • ${usedPrefix + command} facts
 • ${usedPrefix + command} img
 • ${usedPrefix + command} joke
+• ${usedPrefix + command} dict
 • ${usedPrefix + command} lyrics
-• ${usedPrefix + command} mc
-• ${usedPrefix + command} meme
-• ${usedPrefix + command} pokedex
-• ${usedPrefix + command} canvas
+• ${usedPrefix + command} filter
 `
 await conn.sendButtonVid(m.chat, logo, caption, 'Nih.mp4', 'Back', '.menulist', fakes, adReply)
             }
@@ -76,17 +74,17 @@ case 'animu':
         return conn.sendButtonGif(m.chat, 'Nihh', wm, { url: dc.link }, btn, knimg)
             break
             case 'binary':
-        let eb = await fetch(`https://some-random-api.ml/binary?text=${one}`)
+        let eb = await fetch(`https://some-random-api.ml/others/binary?text=${one}`)
         let ec = await eb.json()
         return m.reply(ec.binary)
             break
             case 'token':
-        let fb = await fetch(`https://some-random-api.ml/token`)
+        let fb = await fetch(`https://some-random-api.ml/others/bottoken`)
         let fc = await fb.json()
         return m.reply(fc.token)
             break
             case 'base64':
-        let gb = await fetch(`https://some-random-api.ml/base64?encode=${one}`)
+        let gb = await fetch(`https://some-random-api.ml/others/base64?${one}=${two}`)
         let gc = await gb.json()
         return m.reply(gc.base64)
             break
@@ -104,13 +102,19 @@ case 'animu':
             break
             
             case 'joke':
-        let jb = await fetch(`https://some-random-api.ml/joke`)
+        let jb = await fetch(`https://some-random-api.ml/others/joke`)
         let jc = await jb.json()
         return m.reply(jc.joke)
             break
             
+            case 'dict':
+        let dct = await fetch(`https://some-random-api.ml/others/dictionary?word=${one}`)
+        let dic = await dct.json()
+        return m.reply(dic.definition)
+            break
+            
             case 'lyrics':
-        let kb = await fetch(`https://some-random-api.ml/lyrics?title=${one}`)
+        let kb = await fetch(`https://some-random-api.ml/others/lyrics?title=${one}`)
         let kc = await kb.json()
         let kd = `${kc.title}
         ${kc.author}
@@ -119,47 +123,8 @@ case 'animu':
             return conn.sendButtonImg(m.chat, kc.thumbnail.genius, kd, kc.link.genius, 'To Sticker', '.s', fakes, adReply)
             break
             
-            case 'mc':
-        let lb = await fetch(`https://some-random-api.ml/mc?username=${one}`)
-        let lc = await lb.json()
-        return m.reply(lc.uuid)
-            break
             
-            case 'meme':
-        let mb = await fetch(`https://some-random-api.ml/meme`)
-        let mc = await mb.json()
-            return conn.sendButtonImg(m.chat, mc.image, mc.caption, mc.id + '|' + mc.category, 'To Sticker', '.s', fakes, adReply)
-            break
-            
-            case 'pokedex':
-            let nb = await fetch(`https://some-random-api.ml/pokedex?pokemon=${one}`)
-        let nc = await nb.json()
-        let nd = `${nc.name}
-        ${nc.id}
-        ${Array.from(nc.type)}
-        ${Array.from(nc.species)}
-        ${Array.from(nc.abilities)}
-        ${nc.height}
-        ${nc.weight}
-        ${nc.base_experience}
-        ${Array.from(nc.gender)}
-        ${Array.from(nc.egg_groups)}
-        ${nc.stats.hp}
-        ${nc.stats.attack}
-        ${nc.stats.defense}
-        ${nc.stats.sp_atk}
-        ${nc.stats.sp_def}
-        ${nc.stats.speed}
-        ${nc.stats.total}
-        ${nc.family.evolutionStage}
-        ${Array.from(nc.familyevolutionLine)}
-        ${nc.sprites.normal}
-        ${nc.generation}
-        `
-        return conn.sendButtonGif(m.chat, nd, nc.description, { url: nc.sprites.animated }, btn, knimg)
-            break
-            
-            case 'canvas':
+            case 'filter':
             let a_ = m.quoted ? m.quoted : m
   let b_ = (a_.msg || a_).mimetype || ''
   if (!b_) throw 'No media found'
@@ -176,8 +141,49 @@ case 'animu':
         } catch (e) {
         throw eror
         }
-        let wnt = `https://some-random-api.ml/canvas/${one}?avatar=${d_}`
-        return conn.sendButtonImg(m.chat, wnt, wm, 'Nih.jpg', 'Sticker', '.s', fakes, adReply)
+        let fil = `https://some-random-api.ml/canvas/filter/${one}?avatar=${d_}`
+        return conn.sendButtonImg(m.chat, fil, wm, 'Nih.jpg', 'Sticker', '.s', fakes, adReply)
+            break
+            case 'misc':
+            let a__ = m.quoted ? m.quoted : m
+  let b__ = (a__.msg || a__).mimetype || ''
+  if (!b__) throw 'No media found'
+  let c__ = await a__.download()
+  let e__ = new Sticker(c__, { pack: packname, author: author, type: StickerTypes.FULL })
+  let d__
+  try {
+  if (/webp/g.test(b__)) d__ = await webp2png(c__)
+        else if (/image/g.test(b__)) d__ = await uploadImage(c__)
+        else if (/video/g.test(b__)) d__ = await uploadFile(c__)
+        else if (/viewOnce/g.test(b__)) d__ = await uploadFile(c__)
+        if (typeof d__ !== 'string') d__ = await uploadImage(c__)
+        else if (/gif/g.test(b__)) d__ = e__
+        } catch (e) {
+        throw eror
+        }
+        let mis = `https://some-random-api.ml/canvas/misc/${one}?avatar=${d__}`
+        return conn.sendButtonImg(m.chat, mis, wm, 'Nih.jpg', 'Sticker', '.s', fakes, adReply)
+            break
+            
+            case 'overlay':
+            let a___ = m.quoted ? m.quoted : m
+  let b___ = (a___.msg || a___).mimetype || ''
+  if (!b___) throw 'No media found'
+  let c___ = await a___.download()
+  let e___ = new Sticker(c___, { pack: packname, author: author, type: StickerTypes.FULL })
+  let d___
+  try {
+  if (/webp/g.test(b___)) d___ = await webp2png(c___)
+        else if (/image/g.test(b___)) d___ = await uploadImage(c___)
+        else if (/video/g.test(b___)) d___ = await uploadFile(c___)
+        else if (/viewOnce/g.test(b___)) d___ = await uploadFile(c___)
+        if (typeof d___ !== 'string') d___ = await uploadImage(c___)
+        else if (/gif/g.test(b___)) d___ = e___
+        } catch (e) {
+        throw eror
+        }
+        let ove = `https://some-random-api.ml/canvas/overlay/${one}?avatar=${d___}`
+        return conn.sendButtonImg(m.chat, ove, wm, 'Nih.jpg', 'Sticker', '.s', fakes, adReply)
             break
             
 }

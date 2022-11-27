@@ -7,10 +7,11 @@ let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? c
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
 
-  if (!text) throw `Contoh penggunaan ${usedPrefix}${command} Naruto`
+   let ohh = `Contoh penggunaan ${usedPrefix}${command} Naruto`
   
   if (command == 'brailletotext') {
-let res = await axios('https://violetics.pw/api/converter/braille-to-text?apikey=beta&braille=' + text)
+  if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/converter/braille-to-text', { braille: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	m.reply(dapet)
@@ -18,18 +19,20 @@ let dapet = json.result
 
 
 if (command == 'texttobraille') {
-let res = await axios('https://violetics.pw/api/converter/text-to-braille?apikey=beta&text=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/converter/text-to-braille', { text: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	m.reply(dapet)
 }
 
 if (command == 'tocartoon') {
+if (m.quoted) throw 'Reply image'
 let q = m.quoted ? m.quoted : m
   let media = await q.download()
   let isTele = /image\/(png|jpe?g|gif)|video\/mp4/.test(mime)
   let link = await (isTele ? uploadImage : uploadFile)(media)
-let res = 'https://violetics.pw/api/converter/photo-to-cartoon?apikey=beta&img=' + link
+let res = global.API('violetics', '/api/converter/photo-to-cartoon', { img: link }, 'apikey')
 let caption = `*⎔┉━「 ${command} 」━┉⎔*
 🤠 *Query* : ${link}`
   await conn.sendButton(m.chat, caption, wm, res, [
@@ -39,7 +42,8 @@ let caption = `*⎔┉━「 ${command} 」━┉⎔*
 }
 
 if (command == 'befonts') {
-let res = await axios('https://violetics.pw/api/fonts/befonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/befonts', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -56,7 +60,8 @@ let dapet = json.result
 }
 
 if (command == 'dafont') {
-let res = await axios('https://violetics.pw/api/fonts/dafont?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/dafont', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -73,7 +78,8 @@ let dapet = json.result
 }
 
 if (command == 'dfonts') {
-let res = await axios('https://violetics.pw/api/fonts/dfonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/dfonts', { font: text }, 'apikey'))
 let json = res.data
 	let row = Object.values(json).map((v, index) => ({
 		title: index + ' ' + v.font_name,
@@ -89,7 +95,8 @@ let json = res.data
 }
 
 if (command == 'ffonts') {
-let res = await axios('https://violetics.pw/api/fonts/ffonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/ffonts', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -106,7 +113,8 @@ let dapet = json.result
 }
 
 if (command == 'fontfabric') {
-let res = await axios('https://violetics.pw/api/fonts/fontfabric?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/fontfabric', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -123,7 +131,8 @@ let dapet = json.result
 }
 
 if (command == 'fonts') {
-let res = await axios('https://violetics.pw/api/fonts/fonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/fonts', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -140,7 +149,8 @@ let dapet = json.result
 }
 
 if (command == 'fontspace') {
-let res = await axios('https://violetics.pw/api/fonts/fontspace?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/fontspace', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -157,7 +167,8 @@ let dapet = json.result
 }
 
 if (command == 'fontsquirrel') {
-let res = await axios('https://violetics.pw/api/fonts/fontsquirrel?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/fontsquirrel', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -174,7 +185,8 @@ let dapet = json.result
 }
 
 if (command == 'fontzone') {
-let res = await axios('https://violetics.pw/api/fonts/fontzone?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/fontzone', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -191,7 +203,8 @@ let dapet = json.result
 }
 
 if (command == 'urbanfonts') {
-let res = await axios('https://violetics.pw/api/fonts/urbanfonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/urbanfonts', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
@@ -208,7 +221,8 @@ let dapet = json.result
 }
 
 if (command == 'wfonts') {
-let res = await axios('https://violetics.pw/api/fonts/wfonts?apikey=beta&font=' + text)
+if (!text) throw ohh
+let res = await axios(global.API('violetics', '/api/fonts/wfonts', { font: text }, 'apikey'))
 let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({

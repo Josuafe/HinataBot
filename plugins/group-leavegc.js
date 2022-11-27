@@ -16,7 +16,7 @@ let handler = async (m, { conn, usedPrefix, text, command, args, isOwner, isAdmi
 	})
 	
   let type = (args[0] || '').toLowerCase()
-
+  try {
   switch (type) {
       case 'gw':
       let i = args[1]
@@ -47,6 +47,9 @@ ${dmenuf}`
     default:
       if (!/[01]/.test(command)) return conn.sendList(m.chat, htki + ' 📺 Group List 🔎 ' + htka, `⚡ Silakan pilih Group List di tombol di bawah...\n*Teks yang anda kirim:* ${text ? text : 'Kosong'}\n\nKetik ulang *${usedPrefix + command}* teks anda untuk mengubah teks lagi`, author, `☂️ Group List Disini ☂️`, listSections, m)
       throw false
+  }
+  } catch {
+  throw 'Grup Tidak Ditemukan Atau Bot Sudah Out!'
   }
 }
 handler.help = ['gc', 'gcall', 'group'].map(v => 'leave' + v)

@@ -315,7 +315,7 @@ ${usedPrefix}${command} bisnis
     await conn.sendFile(m.chat, news.thumbnail, 'tribun.png', `${news.title}\n\nDeskripsi :\n${news.description}\n\nSelengkapnya :\n${news.link}`, m)
 }
 }
-handler.command = ['internet']
+handler.tags = ['news']
 handler.help = ['antaranews',
 'cnbc',
 'cnn',

@@ -1,3 +1,4 @@
+
 let split = '|'
 let handler  = async (m, { conn, text, usedPrefix }) => {
   let lmao = 'emror?'
@@ -9,24 +10,31 @@ let handler  = async (m, { conn, text, usedPrefix }) => {
   if (/image|video/.test(mime)) {
     let img = await q.download()
     if (!img) throw 'Foto/Sticker tidak ditemukan'
-    let pi = conn.prepareMessageFromContent(m.chat, {
-	"productMessage": { 
-          "product": { 
-            "productImage":{ 
-	      "mimetype": "image/jpeg", 
-	      "jpegThumbnail": img 
-            }, 
-	    "title": `${txt}`, 
-	    "description": `${text2}`, 
-	    "currencyCode": "IDR", 
-            "priceAmount": "50000", 
-	    "retailerId": "GOPALA5U", 
-	    "productImageCount": 1 
-	  }, 
-	  "businessOwnerJid": conn.user.jid
-	}
-      }, {})
-    conn.relayWAMessage(pi, m)
+    await conn.relayMessage(m.chat, 
+{"productMessage": {
+"product": {
+		"productImage": {
+		 "url": "https://mmg.whatsapp.net/d/f/AnSw-hoxnHkZZE5HfU3Hx8ErJYTt_onVglwSnFJE8x2c.enc",
+"mimetype": "image/jpeg",
+"fileSha256": "nDM/acIuR4SDh/ZKrS8ysfYlM2Z/RgAuikg9Bj1jK+s=",
+"fileLength": "12295",
+"height": 371,
+"width": 558,
+"mediaKey": "p95ebDGt25rIs76r5ymJxeuvKnhUEKQnTilft7z/JEo=",
+"fileEncSha256": "NnBWPq0KgBt2VCN4zD4xg2N/gr/VgZdy8dNnEWqacRc=",
+"jpegThumbnail": img
+},
+"productId": "9999999",
+	"title": txt, 
+	"description": text2,
+	"productImageCount": 1
+},
+"businessOwnerJid": "0@s.whatsapp.net",
+"contextInfo": {
+	"forwardingScore": 9999,
+	"isForwarded": false
+}
+}},{quoted: fakes})
   } else m.reply('FOTO NYA MANA sayang?')
 }
 

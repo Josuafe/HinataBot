@@ -2,17 +2,18 @@ let handler = async (m, { conn }) => {
 let info = `
 *${htki} VIRUS ${htka}*
           
- ðŸ”¥BY FANGZðŸ”¥
+${author} 
           
                   
-â€“â€“â€“â€“â€“â€“ *á´‹á´‡Ê™Éªá´Šá´€á´‹á´€É´* â€“â€“â€“â€“â€“â€“
-*ðŸ“®Gunakan Dengan tujuan yang benar. Jangan untuk merugikan orang lain tanpa alasan!*
+${dmenut}
+${dmenub} *®Gunakan Dengan tujuan yang benar. Jangan untuk merugikan orang lain tanpa alasan!*
+${dmenuf}
 `
 const sections = [
    {
-    title: `âœƒ VIRTEX`,
+    title: dmenub + " VIRTEX",
 	rows: [
-	    {title: "ðŸ˜ˆVirtex 1", rowId: '.virtex1', description: ' ..                                                                                
+	    {title: dmenub + "Virtex 1", rowId: '.virtex1', description: ' ..                                                                                
                                                                                 
                                               
 https://telegra.ph/file/162d60896b53c2e885c40.jpg                          
@@ -1748,38 +1749,38 @@ https://telegra.ph/file/162d60896b53c2e885c40.jpg               �
 ✰99999999 *𝐏𝐄𝐍𝐓𝐀𝐆𝐑𝐀𝐌* 99999999✰
 ✰
 ' },
-	    {title: "ðŸ˜ˆVirtex 2", rowId: '.virtex2', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 3", rowId: '.virtex3', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 4", rowId: '.virtex4', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 5", rowId: '.virtex5', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 6", rowId: '.virtex6', description: 'Jangan lupa donasi' },
-    {title: "ðŸ˜ˆVirtex 7", rowId: '.virtex7', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 8", rowId: '.virtex8', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 9", rowId: '.virtex9', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 10", rowId: '.virtex10', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 11", rowId: '.virtex11', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 12", rowId: '.virtex12', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 13", rowId: '.virtex13', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 14", rowId: '.virtex14', description: 'Jangan lupa donasi' },
-    {title: "ðŸ˜ˆVirtex 15", rowId: '.virtex15', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 16", rowId: '.virtex16', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 17", rowId: '.virtex17', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 18", rowId: '.virtex18', description: 'Jangan lupa donasi' },
-	{title: "ðŸ˜ˆVirtex 19", rowId: '.virtex19', description: 'Jangan lupa donasi' },
-    {title: "ðŸ˜ˆVirtex 20", rowId: '.virtex20', description: 'Jangan lupa donasi' },
+	    {title: dmenub + "Virtex 2", rowId: '.virtex2', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 3", rowId: '.virtex3', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 4", rowId: '.virtex4', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 5", rowId: '.virtex5', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 6", rowId: '.virtex6', description: 'Jangan lupa donasi' },
+    {title: dmenub + "Virtex 7", rowId: '.virtex7', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 8", rowId: '.virtex8', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 9", rowId: '.virtex9', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 10", rowId: '.virtex10', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 11", rowId: '.virtex11', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 12", rowId: '.virtex12', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 13", rowId: '.virtex13', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 14", rowId: '.virtex14', description: 'Jangan lupa donasi' },
+    {title: dmenub + "Virtex 15", rowId: '.virtex15', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 16", rowId: '.virtex16', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 17", rowId: '.virtex17', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 18", rowId: '.virtex18', description: 'Jangan lupa donasi' },
+	{title: dmenub + "Virtex 19", rowId: '.virtex19', description: 'Jangan lupa donasi' },
+    {title: dmenub + "Virtex 20", rowId: '.virtex20', description: 'Jangan lupa donasi' },
 
 	]
     }, {
-    title: `âœƒ INFO`,
+    title: dmenub + " INFO",
 	rows: [
-	    {title: "ðŸ”¥Download WhatsApp Imune", rowId: '.waantivirus', description: 'Download WhatsApp Kebal' },
-	    {title: "ðŸ”¥Virus Troli", rowId: '.virustroli', description: 'PENTAGRAM' },
-	    {title: "ðŸ”¥Virus Power", rowId: '.powerlist', description: 'PENTAGRAM' },
+	    {title: dmenub + "Download WhatsApp Imune", rowId: '.waantivirus', description: 'Download WhatsApp Kebal' },
+	    {title: dmenub + "Virus Troli", rowId: '.virustroli', description: 'PENTAGRAM' },
+	    {title: dmenub + "Virus Power", rowId: '.powerlist', description: 'PENTAGRAM' },
 	    ]
         }, {
-    title: `âœƒ BUY`,
+    title: dmenub + " BUY",
 	rows: [
-	    {title: "ðŸ’¸Upgrade Premium", rowId: '.sewa', description: 'Dan unclock Fitur premium lainya!' },
+	    {title: dmenub + " Upgrade Premium", rowId: '.sewa', description: 'Dan unclock Fitur premium lainya!' },
 	    ]
         },
 ]
@@ -1788,7 +1789,7 @@ const listMessage = {
   text: ' ',
   footer: info,
   title: null,
-  buttonText: "ðŸ‘ºGASS",
+  buttonText: dmenub + " GASS",
   sections
 }
 await conn.sendMessage(m.chat, listMessage, { quoted: m})
