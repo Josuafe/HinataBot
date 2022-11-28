@@ -151,18 +151,18 @@ if (typeof global.db.data.users[who] == "undefined") {
 if (!args[0]) {
 	const sections = [
     {
-	title: htki + 'Inventory' + htka,
+	title: htki + ' Inventory '.toUpperCase() + htka,
 	rows: [
-{title: dmenub + "Inventory 1", rowId: usedPrefix + command + ' 1'},
-{title: dmenub + "Inventory 2", rowId: usedPrefix + command + ' 2'},
-{title: dmenub + "Inventory 3", rowId: usedPrefix + command + ' 3'},
-{title: dmenub + "Inventory 4", rowId: usedPrefix + command + ' 4'}
+{title: dmenub + ' Inventory 1', rowId: usedPrefix + command + ' 1', description: 'Simple'},
+{title: dmenub + ' Inventory 2', rowId: usedPrefix + command + ' 2', description: 'Yang kamu miliki'},
+{title: dmenub + ' Inventory 3', rowId: usedPrefix + command + ' 3', description: 'Terbagi bagi'},
+{title: dmenub + ' Inventory 4', rowId: usedPrefix + command + ' 4', description: 'Gak ada emoji'}
 	]
     },{
-	title: htki + 'Kolam' + htka,
+	title: htki + ' Kolam '.toUpperCase() + htka,
 	rows: [
-{title: dmenub + "Kolam 1", rowId: usedPrefix + command + ' invkolam'},
-{title: dmenub + "Kolam 2", rowId: usedPrefix + 'kolamikan'}
+{title: dmenub + ' Kolam 1', rowId: usedPrefix + command + ' invkolam', description: 'Daftar nya'},
+{title: dmenub + ' Kolam 2', rowId: usedPrefix + 'kolamikan', description: 'Ketik .kolamikan'}
 
 	]
     }

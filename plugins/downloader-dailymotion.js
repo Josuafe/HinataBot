@@ -23,7 +23,7 @@ let dapet = json.result.url
 }
 handler.help = ['dailymotion'].map(v => v + ' <url>')
 handler.tags = ['downloader']
-handler.command = /^(dm|dailymotion)?$/i
+handler.command = /^(dailymotion)$/i
 
 handler.exp = 0
 handler.register = false
