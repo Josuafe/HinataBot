@@ -267,7 +267,7 @@ let json = res.data
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
-		description: '\nUrl: ' + v.url + '\nThumb: ' + v.thumbnail + '\nRate: ' + v.rate + '\nType: ' + v.type,
+		description: '\nUrl: ' + v.url + '\nThumb: ' + v.thumbnail + '\nStatus: ' + v.status + '\nType: ' + v.type,
 		rowId: usedPrefix + 'ss ' + v.url
 	}))
 	let button = {
