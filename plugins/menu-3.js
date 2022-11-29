@@ -19,7 +19,7 @@ Hai, %name! %ucapan
 *Fitur:* %totalfeatures command
 
 %readmore
-*Support me:* _https://s.id/Cerdasin62_
+*Support me:* ${webs}
 *Note:*
 _Jika Respon Tidak Muncul Kemungkinan Terjadi Error_
 `.trimStart(),
@@ -71,7 +71,7 @@ let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirnam
  let ktx = ktnya.getRandom()
      let tags
      let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'absen', 'admin', 'advanced', 'anonymous', 'audio', 'Baileys', 'database', 'downloader', 'edukasi', 'fun', 'game', 'group', 'host', 'info', 'internet', 'jadian', 'jadibot', 'kerang', 'main', 'maker', 'nocategory', 'nsfw', 'nulis', 'owner', 'premium', 'primbon', 'quotes', 'quran', 'random', 'rpg', 'sticker', 'tools', 'vote', 'xp']
+  let arrayMenu = ['all', 'absen', 'admin', 'advanced', 'anonymous', 'audio', 'Baileys', 'database', 'downloader', 'edukasi', 'fun', 'game', 'genshin', 'group', 'host', 'info', 'internet', 'jadian', 'jadibot', 'kerang', 'main', 'maker', 'nocategory', 'nsfw', 'nulis', 'owner', 'premium', 'primbon', 'quotes', 'quran', 'random', 'rpg', 'sticker', 'tools', 'vote', 'xp']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
   'main': 'Main',
@@ -86,6 +86,7 @@ let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirnam
   'primbon': 'Primbon',
   'fun': 'Fun',
   'game': 'Game',
+  'genshin': 'GENSHIN IMPACT',
   'quotes': 'Quotes',
   'audio': 'Audio',
   'maker': 'Maker',
@@ -141,6 +142,9 @@ let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirnam
   }
   if (teks == 'game') tags = {
     'game': 'Game'
+  }
+  if (teks == 'genshin') tags = {
+    'genshin': 'GENSHIN IMPACT'
   }
   if (teks == 'group') tags = {
     'group': 'Group'
@@ -243,6 +247,7 @@ let handler = async (m, { conn, command, groupMetadata, usedPrefix: _p, __dirnam
 	{title: ++index + "." + spas + "📔 Edukasi Menu".toUpperCase(), rowId: _p + "menulist edukasi", description: spas + spas2 + mojis + ktx},
 	{title: ++index + "." + spas + "🪄 Fun Menu".toUpperCase(), rowId: _p + "menulist fun", description: spas + spas2 + mojis + ktx},
 	{title: ++index + "." + spas + "🎮 Game Menu".toUpperCase(), rowId: _p + "menulist game", description: spas + spas2 + mojis + ktx},
+	{title: ++index + "." + spas + "⚡ Genshin Menu".toUpperCase(), rowId: _p + "menulist genshin", description: spas + spas2 + mojis + ktx},
 	{title: ++index + "." + spas + "👨‍👩‍👦‍👦 Group Menu".toUpperCase(), rowId: _p + "menulist group", description: spas + spas2 + mojis + ktx},
 	{title: ++index + "." + spas + "🖥️ Host Menu".toUpperCase(), rowId: _p + "menulist host", description: spas + spas2 + mojis + ktx},
 	{title: ++index + "." + spas + "ℹ️ Info Menu".toUpperCase(), rowId: _p + "menulist info", description: spas + spas2 + mojis + ktx},

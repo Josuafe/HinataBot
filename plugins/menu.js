@@ -16,6 +16,7 @@ let tags = {
   'primbon': 'Primbon',
   'fun': 'Fun',
   'game': 'Game',
+  'genshin': 'GENSHIN IMPACT',
   'quotes': 'Quotes',
   'audio': 'Audio',
   'maker': 'Maker',
@@ -53,7 +54,7 @@ Hai, %name! %ucapan
 *Fitur:* %totalfeatures command
 
 %readmore
-*Support me:* _https://s.id/Cerdasin62_
+*Support me:* ${webs}
 *Note:*
 _Jika Respon Tidak Muncul Kemungkinan Terjadi Error_
 `.trimStart(),

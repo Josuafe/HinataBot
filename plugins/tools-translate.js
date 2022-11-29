@@ -1,4 +1,4 @@
-import translate from 'google-translate-api'
+import translate from '@vitalets/google-translate-api'
 
 let handler = async (m, { args, usedPrefix, command }) => {
 	let lang, text
@@ -6,13 +6,13 @@ let handler = async (m, { args, usedPrefix, command }) => {
 		lang = args[0] ? args[0] : 'id', text = args.slice(1).join(' ')
 	} else if (m.quoted && m.quoted.text) {
 		lang = args[0] ? args[0] : 'id', text = m.quoted.text
-	} else throw `Ex: ${usedPrefix + command} id hello world`
+	} else throw `Ex: ${usedPrefix + command} id hello i am robot`
 	let res = await translate(text, { to: lang, autoCorrect: true }).catch(_ => null)
-	if (!res) throw `Error: The language "${lang}" is not supported`
-	m.reply(`*Dari:* ${res.from.language.iso}\n*Ke:* ${lang}\n\n${res.text}`.trim())
+	if (!res) throw `Error : Bahasa"${lang}" Tidak Support`
+	m.reply(`*Terdeteksi Bahasa:* ${res.from.language.iso}\n*Ke Bahasa:* ${lang}\n\n*Terjemahan:* ${res.text}`.trim())
 }
-handler.help = ['translate']
+handler.help = ['translate'].map(v => v + ' <bahasa> <teks>')
 handler.tags = ['tools']
-handler.command = /^(t((erjemahkan|ransl(ate|et))|(erjemah|r))|apanih)$/i
+handler.command = /^(tr(anslate)?)$/i
 
 export default handler
