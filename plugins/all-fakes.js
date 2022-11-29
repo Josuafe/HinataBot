@@ -9,7 +9,7 @@ export async function before(m, { conn }) {
 	let name = await conn.getName(who)
 	
 	/* Hiasan */
-		let emor = await fetch('https://unpkg.com/emoji.json/emoji-compact.json')
+		let emor = await fetch('https://unpkg.com/emoji.json@13.1.0/emoji-compact.json')
 		let emo = await emor.json()
 		let ini_kotak = ['⛶','❏','⫹⫺','☰','⎔','✦','⭔','⬟','⛊','⚝'].getRandom()
 		let ini_titik = ['◈','➭','ଓ','⟆•','⳻⳻','•','↬','◈▻','⭑','ᯬ','◉','᭻','»','〆','々','⛥','✗','⚜','⚚','♪'].getRandom()
@@ -19,7 +19,7 @@ export async function before(m, { conn }) {
 		let ini_I = ['│','┃','┆','┇','┊','┋','╎','╏','║'].getRandom()
 		let ini_atas = ini_kotak + ini_garis + '『'
 		let ini_kiri = ini_I + ini_titik
-		let ini_bawah = ini_L + ini_panjang + ini_titik
+		let ini_bawah = ini_L + ini_panjang + ini_kotak
 		let ini_kanan = '』' + ini_garis + ini_kotak
 		
 		/* Thumbnail */

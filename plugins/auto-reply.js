@@ -27,25 +27,25 @@ await this.reply(nomorown + '@s.whatsapp.net', `Ada Yang Mau Nyulik nih :v \n\nd
     
     // ketika ada yang kirim anu
     if (m.mtype === 'reactionMessage') {
-    let caption = `Terdeteksi ${name} @${who.split("@")[0]} Lagi Mengirim Reaction [ ${m.text} ]`
+    let caption = `*${htki} ᴘᴇʀʜᴀᴛɪᴀɴ ${htka}*\n*Terdeteksi* ${name} @${who.split("@")[0]} Lagi Mengirim Reaction\n*Pesan:* [ ${m.text} ]`
     this.sendButton(m.chat, caption, wm, null, [[user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '/owner' : '/menu']], m, { mentions: this.parseMention(caption) })
         }
         
     // ketika ada yang kirim anu
     if (m.mtype === 'paymentMessage') {
-    let caption = `Terdeteksi ${name} @${who.split("@")[0]} Lagi Meminta Uang :> [ ${m.text} ]`
+    let caption = `*${htki} ᴘᴇʀʜᴀᴛɪᴀɴ ${htka}*\n*Terdeteksi* ${name} @${who.split("@")[0]} Lagi Meminta Uang :>\n*Pesan:* [ ${m.text} ]`
     this.sendButton(m.chat, caption, wm, null, [[user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '/owner' : '/menu']], m, { mentions: this.parseMention(caption) })
         }
     
     // ketika ada yang kirim anu
     if (m.mtype === 'productMessage') {
-    let caption = `Terdeteksi ${name} @${who.split("@")[0]} Lagi Promosi :> [ ${m.text} ]`
+    let caption = `*${htki} ᴘᴇʀʜᴀᴛɪᴀɴ ${htka}*\n*Terdeteksi* ${name} @${who.split("@")[0]} Lagi Promosi :>\n*Pesan:* [ ${m.text} ]`
     this.sendButton(m.chat, caption, wm, null, [[user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '/owner' : '/menu']], m, { mentions: this.parseMention(caption) })
         }
     
     // ketika ada yang kirim anu
     if (m.mtype === 'orderMessage') {
-    let caption = `Terdeteksi ${name} @${who.split("@")[0]} Lagi Meng Order :> [ ${m.text} ]`
+    let caption = `*${htki} ᴘᴇʀʜᴀᴛɪᴀɴ ${htka}*\n*${htki} ᴘᴇʀʜᴀᴛɪᴀɴ ${htka}*\n*Terdeteksi* ${name} @${who.split("@")[0]} Lagi Meng Order :>\n*Pesan:* [ ${m.text} ]`
     this.sendButton(m.chat, caption, wm, null, [[user.banned ? 'Pemilik Bot' : 'Menu', user.banned ? '/owner' : '/menu']], m, { mentions: this.parseMention(caption) })
         }
     

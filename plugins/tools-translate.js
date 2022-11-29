@@ -1,4 +1,4 @@
-import translate from '@vitalets/google-translate-api'
+import translate from 'google-translate-api'
 
 let handler = async (m, { args, usedPrefix, command }) => {
 	let lang, text
