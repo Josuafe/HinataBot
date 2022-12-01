@@ -3,10 +3,10 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 import knights from 'knights-canvas'
-export async function all(m) {
+export async function before(m, { conn }) {
 	
-	let who = m.sender ? m.sender : this.user.jid && this.user.jid ? this.user.jid : '0@s.whatsapp.net'
-	let name = await this.getName(who)
+	let who = m.sender ? m.sender : conn.user.jid && conn.user.jid ? conn.user.jid : '0@s.whatsapp.net'
+	let name = await conn.getName(who)
 	
 	/* Hiasan */
 		let emor = await fetch('https://unpkg.com/emoji.json@13.1.0/emoji-compact.json')
@@ -47,11 +47,11 @@ export async function all(m) {
 		
 	let sapa = ['ʜᴀɪ', 'ᴏʜᴀʏᴏ', 'ᴋʏᴀᴀ', 'ʜᴀʟᴏ', 'ɴʏᴀɴɴ'].getRandom()
 	let curr = ['IDR','RSD','USD'].getRandom()
-	let pp = await this.profilePictureUrl(who, 'image').catch(_ => link_waifu.getRandom())
+	let pp = await conn.profilePictureUrl(who, 'image').catch(_ => link_waifu.getRandom())
 	
     /* jpegThumbnail */
-    let _situm = await this.resize(link_game.getRandom(), 300, 150)
-    let sipp = await this.resize(pp, 150, 150)
+    let _situm = await conn.resize(link_game.getRandom(), 300, 150)
+    let sipp = await conn.resize(pp, 150, 150)
     
     /* Fake Knights */
 		let imagea = await new knights.Jo().setImage(pp).toBuild();
