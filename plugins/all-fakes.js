@@ -3,7 +3,7 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 import knights from 'knights-canvas'
-export async function before(m) {
+export async function all(m) {
 	
 	let who = m.sender ? m.sender : this.user.jid && this.user.jid ? this.user.jid : '0@s.whatsapp.net'
 	let name = await this.getName(who)
