@@ -25,11 +25,11 @@ const defaultMenu = {
 	before: `
 Genshin Impact JSON data with a robust searching API! Updated to version 2.8. Sources from the fandom wiki and GenshinData repo.
 
-━ ━ *[ 🐳 GENSHIN COMMAND ]* ━ ━
+${htjava} 🐳 GENSHIN COMMAND ${htjava}
 `.trimStart(),
-	header: '╭─「 %category 」',
-	body: '│ • %cmd',
-	footer: '╰────\n',
+	header: `${cmenut} *%category* ${cmenuh}`,
+  body: `┊${emot} %cmd`,
+  footer: `${cmenuf}`
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
 	try {

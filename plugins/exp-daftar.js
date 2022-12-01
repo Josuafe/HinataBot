@@ -2,48 +2,50 @@ import { createHash } from 'crypto'
 import fetch from 'node-fetch'
 let Reg = /\|?(.*)([.|] *?)([0-9]*)$/i
 
-let handler = async function (m, { text, usedPrefix, command }) {
+let handler = async function (m, { text, conn, usedPrefix, command }) {
 	function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)]
 }
-	let namae = conn.getName(m.sender)
+	let namae = await conn.getName(m.sender)
+	let namamu = namae ? namae : 'Gapunya Nama'
+	
 	const sections = [
 	{
 	title: htjava + "Select Your Age Here !" + htjava,
 	rows: [
-	    {title: "Random Tahun", rowId: '.daftar ' + namae + '.' + pickRandom(['30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','9'])}
+	    {title: "Random Years", rowId: '.daftar ' + namamu + '.' + pickRandom(['30','29','28','27','26','25','24','23','22','21','20','19','18','17','16','15','14','13','12','11','10','9'])}
 	]
     },
     {
 	title: htki + " O L D " + htka,
 	rows: [
-	    {title: "30 Tahun", rowId: '.daftar ' + namae + '.30 '},
-	    {title: "29 Tahun", rowId: '.daftar ' + namae + '.29 '},
-	    {title: "28 Tahun", rowId: '.daftar ' + namae + '.28 '},
-	{title: "27 Tahun", rowId: '.daftar ' + namae + '.27 '},
-	{title: "26 Tahun", rowId: '.daftar ' + namae + '.26 '},
-	{title: "25 Tahun", rowId: '.daftar ' + namae + '.25 '},
-	{title: "24 Tahun", rowId: '.daftar ' + namae + '.24 '},
-	{title: "23 Tahun", rowId: '.daftar ' + namae + '.23 '},
-	{title: "22 Tahun", rowId: '.daftar ' + namae + '.22 '},
-	{title: "21 Tahun", rowId: '.daftar ' + namae + '.21 '}
+	    {title: emojis + dmenub + "30 Years", rowId: '.daftar ' + namamu + '.30 '},
+	    {title: emojis + dmenub + "29 Years", rowId: '.daftar ' + namamu + '.29 '},
+	    {title: emojis + dmenub + "28 Years", rowId: '.daftar ' + namamu + '.28 '},
+	{title: emojis + dmenub + "27 Years", rowId: '.daftar ' + namamu + '.27 '},
+	{title: emojis + dmenub + "26 Years", rowId: '.daftar ' + namamu + '.26 '},
+	{title: emojis + dmenub + "25 Years", rowId: '.daftar ' + namamu + '.25 '},
+	{title: emojis + dmenub + "24 Years", rowId: '.daftar ' + namamu + '.24 '},
+	{title: emojis + dmenub + "23 Years", rowId: '.daftar ' + namamu + '.23 '},
+	{title: emojis + dmenub + "22 Years", rowId: '.daftar ' + namamu + '.22 '},
+	{title: emojis + dmenub + "21 Years", rowId: '.daftar ' + namamu + '.21 '}
 	]
     },
     {
 	title: htki + " Y O U N G " + htka,
 	rows: [
-	    {title: "20 Tahun", rowId: '.daftar ' + namae + '.20 '},
-	    {title: "19 Tahun", rowId: '.daftar ' + namae + '.19 '},
-	    {title: "18 Tahun", rowId: '.daftar ' + namae + '.18 '},
-	{title: "17 Tahun", rowId: '.daftar ' + namae + '.17 '},
-	{title: "16 Tahun", rowId: '.daftar ' + namae + '.16 '},
-	{title: "15 Tahun", rowId: '.daftar ' + namae + '.15 '},
-	{title: "14 Tahun", rowId: '.daftar ' + namae + '.14 '},
-	{title: "13 Tahun", rowId: '.daftar ' + namae + '.13 '},
-	{title: "12 Tahun", rowId: '.daftar ' + namae + '.12 '},
-	{title: "11 Tahun", rowId: '.daftar ' + namae + '.11 '},
-	{title: "10 Tahun", rowId: '.daftar ' + namae + '.10 '},
-	{title: "9 Tahun", rowId: '.daftar ' + namae + '.9 '}
+	    {title: emojis + dmenub + "20 Years", rowId: '.daftar ' + namamu + '.20 '},
+	    {title: emojis + dmenub + "19 Years", rowId: '.daftar ' + namamu + '.19 '},
+	    {title: emojis + dmenub + "18 Years", rowId: '.daftar ' + namamu + '.18 '},
+	{title: emojis + dmenub + "17 Years", rowId: '.daftar ' + namamu + '.17 '},
+	{title: emojis + dmenub + "16 Years", rowId: '.daftar ' + namamu + '.16 '},
+	{title: emojis + dmenub + "15 Years", rowId: '.daftar ' + namamu + '.15 '},
+	{title: emojis + dmenub + "14 Years", rowId: '.daftar ' + namamu + '.14 '},
+	{title: emojis + dmenub + "13 Years", rowId: '.daftar ' + namamu + '.13 '},
+	{title: emojis + dmenub + "12 Years", rowId: '.daftar ' + namamu + '.12 '},
+	{title: emojis + dmenub + "11 Years", rowId: '.daftar ' + namamu + '.11 '},
+	{title: emojis + dmenub + "10 Years", rowId: '.daftar ' + namamu + '.10 '},
+	{title: emojis + dmenub + "9 Years", rowId: '.daftar ' + namamu + '.9 '}
 	]
     },
 ]
@@ -71,14 +73,16 @@ const listMessage = {
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
-  let cap = `
-*ᴜsᴇʀs*
-*sᴛᴀᴛᴜs:* ☑️ sᴜᴄᴄᴇssғᴜʟ
-*ɴᴀᴍᴇ:* ${name}
-*ᴀɢᴇ:* ${age} ʏᴇᴀʀs
-*sɴ:* ${sn}
+  let cap = `*${htki} ᴜsᴇʀs ${htki}*
 
-ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.)
+${dmenut} 
+${dmenub} *sᴛᴀᴛᴜs:* ☑️ sᴜᴄᴄᴇssғᴜʟ
+${dmenub} *ɴᴀᴍᴇ:* ${name}
+${dmenub} *ᴀɢᴇ:* ${age} ʏᴇᴀʀs
+${dmenub} *sɴ:* ${sn}
+${dmenuf}
+
+ᴅᴀᴛᴀ ᴜsᴇʀ ʏᴀɴɢ ᴛᴇʀsɪᴍᴘᴀɴ ᴅɪᴅᴀᴛᴀʙᴀsᴇ ʙᴏᴛ, ᴅɪᴊᴀᴍɪɴ ᴀᴍᴀɴ ᴛᴀɴᴘᴀ ᴛᴇʀsʜᴀʀᴇ (. ❛ ᴗ ❛.) ${cmenua}
 `
     conn.send2ButtonDoc(m.chat, cap, author, 'ᴍᴇɴᴜ', '.menu', 'ᴅᴏɴᴀsɪ', '.donasi', fakes, adReply)
 }
