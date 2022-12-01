@@ -54,7 +54,6 @@ nomorhoki,
 pinterest,
 randomBytes,
 randomUUID,
-readVarInt,
 savefrom,
 sfilemobi,
 sfilemobiSearch,
@@ -355,10 +354,12 @@ case 'randomUUID':
 let res55 = await randomUUID(one ? one : null)
 throw res55
 break
+/*
 case 'readVarInt':
 let res56 = await readVarInt(one ? one : null)
 throw res56
 break
+*/
 case 'savefrom':
 let res57 = await savefrom(one ? one : null)
 throw res57
