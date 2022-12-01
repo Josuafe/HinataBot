@@ -4,11 +4,12 @@ let handler = async (m, { conn, usedPrefix, text, args, command }) => {
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 let name = await conn.getName(who)
-  if (!text) throw `Contoh penggunaan ${usedPrefix}${command} Naruto`
+  if (!text) throw `Contoh penggunaan ${usedPrefix + command} Naruto`
   
   if (command == 'anibatch') {
-let res = await axios('https://violetics.pw/api/anime/anibatch?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/anibatch?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -24,8 +25,9 @@ let dapet = json.result
 }
 
 if (command == 'anikyojin') {
-let res = await axios('https://violetics.pw/api/anime/anikyojin?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/anikyojin?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -41,8 +43,9 @@ let dapet = json.result
 }
 
 if (command == 'animeplanet') {
-let res = await axios('https://violetics.pw/api/anime/anime-planet?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/anime-planet?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -58,8 +61,9 @@ let dapet = json.result
 }
 
 if (command == 'anisearch') {
-let res = await axios('https://violetics.pw/api/anime/anisearch?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/anisearch?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -75,8 +79,9 @@ let dapet = json.result
 }
 
 if (command == 'anoboy') {
-let res = await axios('https://violetics.pw/api/anime/anoboy?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/anoboy?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -92,8 +97,9 @@ let dapet = json.result
 }
 
 if (command == 'fanfox') {
-let res = await axios('https://violetics.pw/api/anime/fanfox?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/fanfox?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -109,8 +115,9 @@ let dapet = json.result
 }
 
 if (command == 'gogoanime') {
-let res = await axios('https://violetics.pw/api/anime/gogoanime?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/gogoanime?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.name,
@@ -126,8 +133,9 @@ let dapet = json.result
 }
 
 if (command == 'kiryu') {
-let res = await axios('https://violetics.pw/api/anime/kiryu?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/kiryu?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -143,8 +151,9 @@ let dapet = json.result
 }
 
 if (command == 'kissmanga') {
-let res = await axios('https://violetics.pw/api/anime/kissmanga?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/kissmanga?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -160,8 +169,9 @@ let dapet = json.result
 }
 
 if (command == 'klikmanga') {
-let res = await axios('https://violetics.pw/api/anime/klikmanga?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/klikmanga?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -177,8 +187,9 @@ let dapet = json.result
 }
 
 if (command == 'komiku') {
-let res = await axios('https://violetics.pw/api/anime/komiku?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/komiku?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -194,8 +205,9 @@ let dapet = json.result
 }
 
 if (command == 'mangadex') {
-let res = await axios('https://violetics.pw/api/anime/mangadex?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/mangadex?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -211,8 +223,9 @@ let dapet = json.result
 }
 
 if (command == 'manganato') {
-let res = await axios('https://violetics.pw/api/anime/manganato?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/manganato?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -228,8 +241,9 @@ let dapet = json.result
 }
 
 if (command == 'myanimelist') {
-let res = await axios('https://violetics.pw/api/anime/myanimelist?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/myanimelist?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -245,8 +259,9 @@ let dapet = json.result
 }
 
 if (command == 'nimegami') {
-let res = await axios('https://violetics.pw/api/anime/nimegami?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/nimegami?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -262,8 +277,9 @@ let dapet = json.result
 }
 
 if (command == 'oploverz') {
-let res = await axios('https://violetics.pw/api/anime/oploverz?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/oploverz?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -279,8 +295,9 @@ let dapet = json.result
 }
 
 if (command == 'samehadaku') {
-let res = await axios('https://violetics.pw/api/anime/samehadaku?apikey=beta&manga=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/anime/samehadaku?apikey=beta&manga=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -296,8 +313,9 @@ let dapet = json.result
 }
 
 if (command == 'amino') {
-let res = await axios('https://violetics.pw/api/search/amino?apikey=beta&query=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/amino?apikey=beta&query=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -313,8 +331,9 @@ let dapet = json.result
 }
 
 if (command == 'googleit') {
-let res = await axios('https://violetics.pw/api/search/googleit?apikey=beta&query=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/googleit?apikey=beta&query=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -330,8 +349,9 @@ let dapet = json.result
 }
 
 if (command == 'groupwhatsapp') {
-let res = await axios('https://violetics.pw/api/search/group-whatsapp?apikey=beta&query=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/group-whatsapp?apikey=beta&query=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -347,8 +367,9 @@ let dapet = json.result
 }
 
 if (command == 'layarkaca') {
-let res = await axios('https://violetics.pw/api/search/layarkaca?apikey=beta&query=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/layarkaca?apikey=beta&query=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -364,8 +385,9 @@ let dapet = json.result
 }
 
 if (command == 'mangatoon') {
-let res = await axios('https://violetics.pw/api/search/mangatoon?apikey=beta&query=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/mangatoon?apikey=beta&query=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 	let row = Object.values(dapet).map((v, index) => ({
 		title: index + ' ' + v.title,
@@ -381,8 +403,9 @@ let dapet = json.result
 }
 
 if (command == 'musicfinder') {
-let res = await axios('https://violetics.pw/api/search/music-finder?apikey=beta&audio=' + text)
-let json = res.data
+let res = await fetch('https://violetics.pw/api/search/music-finder?apikey=beta&audio=' + text)
+let json = await res.json()
+if (json.isError == true) throw eror
 let dapet = json.result
 m.reply(`Title: ${dapet.title}
 album: ${dapet.album}
@@ -393,7 +416,7 @@ genres: ${dapet.genres}`)
 }
 
 }
-handler.help = ['anibatch', 'anikyoji', 'animeplanet', 'anisearch', 'anoboy', 'fanfox', 'gogoanime', 'kiryu', 'kissmanga', 'klikmanga', 'komiku', 'mangadex', 'manganato', 'myanimelist', 'nimegami', 'oploverz', 'samehadaku', 'amino', 'googleit', 'groupwhatsapp', 'layarkaca', 'mangatoon', 'musicfinder'].map(v => v + ' <app>')
+handler.help = ['anibatch', 'anikyoji', 'animeplanet', 'anisearch', 'anoboy', 'fanfox', 'gogoanime', 'kiryu', 'kissmanga', 'klikmanga', 'komiku', 'mangadex', 'manganato', 'myanimelist', 'nimegami', 'oploverz', 'samehadaku', 'amino', 'googleit', 'groupwhatsapp', 'layarkaca', 'mangatoon', 'musicfinder']
 handler.command = ['anibatch', 'anikyoji', 'animeplanet', 'anisearch', 'anoboy', 'fanfox', 'gogoanime', 'kiryu', 'kissmanga', 'klikmanga', 'komiku', 'mangadex', 'manganato', 'myanimelist', 'nimegami', 'oploverz', 'samehadaku', 'amino', 'googleit', 'groupwhatsapp', 'layarkaca', 'mangatoon', 'musicfinder']
 handler.tags = ['internet']
 
