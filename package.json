@@ -85,6 +85,7 @@
         "node-webpmux" : "*",
         "perf_hooks" : "*",
         "qs" : "*",
+        "qrcode-terminal" : "*",
         "readline" : "*",
         "request" : "*",
         "sagiri" : "*",
