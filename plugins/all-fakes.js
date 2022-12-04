@@ -10,7 +10,10 @@ export async function before(m, { conn }) {
 	
 	/* Hiasan */
 		let emor = await fetch('https://unpkg.com/emoji.json@13.1.0/emoji-compact.json')
-		let emo = await emor.json()
+		let emo
+		try { emo = await emor.json() }
+		catch (e) { emo = ['🗿', '👻', '⚡', '🦅', '🎏', '🎀', '🪄', '🎊', '🎁', '🏮', '🧧', '🏷️', '📮', '📍', '🔖', '🍒', '🍫', '🐝', '🍃', '✨', '☂️', '👑', '🎗️', '🌹'] }
+		
 		let ini_kotak = ['⛶','❏','⫹⫺','☰','⎔','✦','⭔','⬟','⛊','⚝'].getRandom()
 		let ini_titik = ['◈','➭','ଓ','⟆•','⳻⳻','•','↬','◈▻','⭑','ᯬ','◉','᭻','»','〆','々','⛥','✗','⚜','⚚','♪'].getRandom()
 		let ini_garis = ['┅──┅','━━━','═┅┅═','––––','–━═━–','──┅──','═┅┅┅═','┈┅━┅┈','┈┄═┅═┄┈','┅══┅'].getRandom()
@@ -44,10 +47,14 @@ export async function before(m, { conn }) {
 		let m__ = await m_.json()
 		let n_ = await fetch(gh + 'CyberSpace.json')
 		let n__ = await n_.json()
+		let o_ = await fetch(gh + 'profil.json')
+		let o__ = await o_.json()
 		
 	let sapa = ['ʜᴀɪ', 'ᴏʜᴀʏᴏ', 'ᴋʏᴀᴀ', 'ʜᴀʟᴏ', 'ɴʏᴀɴɴ'].getRandom()
 	let curr = ['IDR','RSD','USD'].getRandom()
-	let pp = await conn.profilePictureUrl(who, 'image').catch(_ => link_waifu.getRandom())
+	let pp
+	try { pp = await conn.profilePictureUrl(who, 'image') }
+	catch (e) { pp = o__.getRandom() }
 	
     /* jpegThumbnail */
     let _situm = await conn.resize(link_game.getRandom(), 300, 150)
