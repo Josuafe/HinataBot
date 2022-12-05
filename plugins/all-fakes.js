@@ -3,8 +3,7 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 import knights from 'knights-canvas'
-let handler = m => m
-handler.all = async function (m) {
+export async function before(m) {
 /* Siapa */
 	let who
 	try { who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? this.user.jid : m.sender }
@@ -382,7 +381,6 @@ handler.all = async function (m) {
 		
 		/* Ends */
 }
-export default handler
 
 function ucapkan() {
 	let waktunya = moment.tz('Asia/Jakarta').format('HH')
