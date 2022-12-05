@@ -28,7 +28,7 @@ Genshin Impact JSON data with a robust searching API! Updated to version 2.8. So
 ${htjava} 🐳 GENSHIN COMMAND ${htjava}
 `.trimStart(),
 	header: `${cmenut} *%category* ${cmenuh}`,
-  body: `┊${emot} %cmd`,
+  body: `${cmenub} %cmd`,
   footer: `${cmenuf}`
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
