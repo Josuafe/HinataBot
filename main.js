@@ -33,8 +33,7 @@ import {
   mongoDBV2
 } from './lib/mongoDB.js'
 
-// import store from './lib/store-single.js'
-
+import store from './lib/store-single.js'
 const {
   useSingleFileAuthState,
   DisconnectReason
@@ -89,7 +88,11 @@ global.loadDatabase = async function loadDatabase() {
 loadDatabase()
 
 global.authFile = `${opts._[0] || 'session'}.data.json`
-const { state, saveState } = store.useSingleFileAuthState(global.authFile)
+
+let Auth
+try { Auth = useSingleFileAuthState(global.authFile) }
+catch (e) { Auth = store.useSingleFileAuthState(global.authFile) }
+const { state, saveState } = Auth
 
 const connectionOptions = {
 printQRInTerminal: true,
