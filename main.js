@@ -1,5 +1,5 @@
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = 0
-import './config.js'
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
+import './config.js';
 
 import { createRequire } from "module" // Bring in the ability to create the 'require' method
 import path, { join } from 'path'
@@ -33,18 +33,13 @@ import {
   mongoDBV2
 } from './lib/mongoDB.js'
 
-import store from './lib/store-single.js'
-const {
-  // useSingleFileAuthState,
-  DisconnectReason
-} = await import('@adiwajshing/baileys')
+// import store from './lib/store-single.js'
 
-/*
 const {
   useSingleFileAuthState,
   DisconnectReason
 } = (await import('@adiwajshing/baileys')).default
-*/
+
 const { CONNECTING } = ws
 const { chain } = lodash
 const PORT = process.env.PORT || process.env.SERVER_PORT || 3000
