@@ -39,7 +39,7 @@
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
-        "@adiwajshing/baileys" : "*",
+        "@adiwajshing/baileys" : "github:Saipulanuar/baileys",
         "@bochilteam/scraper" : "*",
         "@ibaraki-douji/pixivts" : "*",
         "@vitalets/google-translate-api" : "^8.0.0",
@@ -78,7 +78,7 @@
         "lowdb" : "*",
         "mime-types" : "*",
         "moment-timezone" : "*",
-        "mongoose" : "*",
+        "mongoose" : "github:Automattic/mongoose",
         "nhentai-node-api" : "*",
         "node-fetch" : "*",
         "node-gtts" : "*",
