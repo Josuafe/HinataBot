@@ -8,6 +8,7 @@ import { createRequire } from 'module'
 import { createInterface } from 'readline'
 import { setupMaster, fork } from 'cluster'
 import { watchFile, unwatchFile } from 'fs'
+
 // https://stackoverflow.com/a/50052194
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
