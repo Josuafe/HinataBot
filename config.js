@@ -6,16 +6,16 @@ import moment from 'moment-timezone'
 
 /*Oᴡɴᴇʀ number*/
 global.owner = [
-  ['6282195322106', '️One', true],
-  ['6282195322106', '️Two', true],
-  ['6282195322106', '️Three', true],
-  ['6282195322106', '️Four', true],
-  ['6282195322106', '️Five', true],
-  ['6282195322106', '️Six', true],
-  ['6282195322106', '️Seven', true],
-  ['6282195322106', '️Eight', true],
-  ['6282195322106', '️Nine', true],
-  ['6282195322106', '️Teen', true]
+  ['6283807484272', '️One', true],
+  ['6283807484272', '️Two', true],
+  ['6283807484272', '️Three', true],
+  ['6283807484272', '️Four', true],
+  ['6283807484272', '️Five', true],
+  ['6283807484272', '️Six', true],
+  ['6283807484272', '️Seven', true],
+  ['6283807484272', '️Eight', true],
+  ['6283807484272', '️Nine', true],
+  ['6283807484272', '️Teen', true]
 ]
 global.mods = []
 global.prems = []
