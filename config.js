@@ -51,7 +51,7 @@ global.APIs = {
 /*Apikey*/
 global.APIKeys = {
  'https://api.neoxr.my.id' : '5VC9rvNx',
- 'https://api.lolhuman.xyz' : 'ed78c137a46873c5b8e5fe3b',
+ 'https://api.lolhuman.xyz' : '453a720baedfd03e96f81e15',
  'https://api.xteam.xyz' : 'HIRO',
  'https://api.zeks.xyz' : 'apivinz',
  'https://hardianto-chan.herokuapp.com' : 'hardianto',
